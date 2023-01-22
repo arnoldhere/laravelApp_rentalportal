@@ -57,8 +57,8 @@ class homeController extends Controller
     public function signupUser(Request $request)
     {
         $request->validate([
-            'firstname' => "required",
-            'lastname' => "required",
+                'firstname' => "required|min:4",
+            'lastname' => "required|min:4",
             'phone' => 'required|digits:10',
             'email' => "required|unique:users",
             'password' => 'required|min:4|confirmed'
