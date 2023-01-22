@@ -36,10 +36,12 @@ class homeController extends Controller
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
+            $userCreadentials = $request->only('email', 'password');
+            $request->session()->put('email', $userCreadentials['email']);
             $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
             if ($check) {
-                Alert::success("Login", "Welcome user !");
                 return redirect()->route('user.index');
+                Alert::success("Login", "Welcome user !");
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");
                 return redirect()->back();
@@ -57,7 +59,7 @@ class homeController extends Controller
     public function signupUser(Request $request)
     {
         $request->validate([
-                'firstname' => "required|min:4",
+            'firstname' => "required|min:4",
             'lastname' => "required|min:4",
             'phone' => 'required|digits:10',
             'email' => "required|unique:users",
