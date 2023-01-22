@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\userController;
+use App\Models\userModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 

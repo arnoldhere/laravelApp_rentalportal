@@ -8,13 +8,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use App\Models\userModel;
+use Illuminate\Support\Facades\DB;
 
 class homeController extends Controller
 {
     // login authentication
     public function login()
     {
-        return view('home.login');
+        if (Session::has('user')) {
+            return redirect()->route('user.index');
+        }
+        return redirect()->route('login');
     }
     public function loginuser(Request $request)
     {
@@ -36,12 +40,11 @@ class homeController extends Controller
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
-            $userCreadentials = $request->only('email', 'password');
-            $request->session()->put('email', $userCreadentials['email']);
             $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            Session::put('user', $request->email);
             if ($check) {
-                return redirect()->route('user.index');
                 Alert::success("Login", "Welcome user !");
+                return redirect()->route('user.index');
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");
                 return redirect()->back();
