@@ -88,4 +88,9 @@ class homeController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function forgotPassword()
+    {
+        return view('home.forgotPassword');
+    }
 }

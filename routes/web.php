@@ -19,6 +19,8 @@ Route::post('/loginuser', [homeController::class, 'loginuser'])->name('loginuser
 
 Route::get('/logout', [homeController::class, 'logout'])->name('logout');
 
+Route::get('/forgotPassword', [homeController::class, 'forgotPassword'])->name('forgotPassword');
+
 Route::middleware('auth')->group(function () {
 
     // for admin
