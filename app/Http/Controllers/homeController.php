@@ -15,10 +15,7 @@ class homeController extends Controller
     // login authentication
     public function login()
     {
-        if (Session::has('user')) {
-            return redirect()->route('user.index');
-        }
-        return redirect()->route('login');
+        return view('home.login');
     }
     public function loginuser(Request $request)
     {
@@ -41,7 +38,6 @@ class homeController extends Controller
                 'password' => 'required'
             ]);
             $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-            Session::put('user', $request->email);
             if ($check) {
                 Alert::success("Login", "Welcome user !");
                 return redirect()->route('user.index');
@@ -85,5 +81,11 @@ class homeController extends Controller
             Alert::error("Failed", "Unable to signup ... Try again ! ");
             return redirect()->route('login');
         }
+    }
+
+    public function logout()
+    {
+
+        return redirect()->route('login');
     }
 }

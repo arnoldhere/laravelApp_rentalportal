@@ -17,6 +17,7 @@ Route::post('/signupUser', [homeController::class, 'signupUser'])->name('signupU
 
 Route::post('/loginuser', [homeController::class, 'loginuser'])->name('loginuser');
 
+Route::get('/logout', [homeController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
 
@@ -26,7 +27,7 @@ Route::middleware('auth')->group(function () {
     });
 
     // for users
-    Route::prefix('user')->name('user.')->group(function(){
-        Route::get('/',[userController::class,'index'])->name('index');
+    Route::prefix('user')->name('user.')->group(function () {
+        Route::get('/', [userController::class, 'index'])->name('index');
     });
 });
