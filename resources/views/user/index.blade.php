@@ -36,7 +36,8 @@
                 <span></span>
                 <span></span>
             </button>
-            <a class="navbar-brand text-brand" href="{{ route('user.index') }}">Rent<span class="color-b">Portal</span></a>
+            <a class="navbar-brand text-brand" href="{{ route('user.index') }}">Rent<span
+                    class="color-b">Portal</span></a>
 
             <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
                 <ul class="navbar-nav">
@@ -46,29 +47,25 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="">About</a>
+                        <a class="nav-link " href="{{ route('user.about') }}">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="property-grid.html">Property</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link " href="blog-grid.html">Blog</a>
+                        <a class="nav-link " href="{{ route('user.blog_grid') }}">Blog</a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item " href="property-single.html">Property Single</a>
-                            <a class="dropdown-item " href="blog-single.html">Blog Single</a>
-                            <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
-                            <a class="dropdown-item " href="agent-single.html">Agent Single</a>
+                            <a class="dropdown-item " href="{{ route('user.property_single') }}">Property Single</a>
+                            <a class="dropdown-item " href="{{ route('user.blog_single') }}">Blog Single</a>
+                            <a class="dropdown-item " href="{{ route('user.agents_grid') }}">Agents Grid</a>
+                            <a class="dropdown-item " href="{{ route('user.agent_single') }}">Agent Single</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="contact.html">Contact</a>
+                        <a class="nav-link " href="{{ route('user.contact') }}">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -78,7 +75,6 @@
                         class="fa-solid fa-user"></i></a>
                 <div class="dropdown-menu">
                     <a href="" class="dropdown-item">Show Profile</a>
-                    {{-- <a href="" class="dropdown-item"></a> --}}
                     <a href="{{ route('logout') }}" class="dropdown-item">Log out</a>
                 </div>
             </li>
@@ -99,15 +95,15 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="intro-body">
-                                        <p class="intro-title-top">Doral, Florida
-                                            <br> 78345
+                                        <p class="intro-title-top">Jaipur
+                                            <br> 302005
                                         </p>
                                         <h1 class="intro-title mb-4 ">
-                                            <span class="color-b">204 </span> Mount
+                                            <span class="color-b">204 </span>
                                             <br> Olive Road Two
                                         </h1>
                                         <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                                            <a href="#"><span class="price-a">rent | &#x20B9; 4500</span></a>
                                         </p>
                                     </div>
                                 </div>
@@ -125,15 +121,15 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="intro-body">
-                                        <p class="intro-title-top">Doral, Florida
-                                            <br> 78345
+                                        <p class="intro-title-top"> New Goa
+                                            <br> 403 801
                                         </p>
                                         <h1 class="intro-title mb-4">
-                                            <span class="color-b">204 </span> Rino
+                                            <span class="color-b">696 </span> Rino
                                             <br> Venda Road Five
                                         </h1>
                                         <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                                            <a href="#"><span class="price-a">rent | &#x20B9; 7500</span></a>
                                         </p>
                                     </div>
                                 </div>
@@ -151,15 +147,15 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="intro-body">
-                                        <p class="intro-title-top">Doral, Florida
-                                            <br> 78345
+                                        <p class="intro-title-top"> Mount Abu
+                                            <br> 307501
                                         </p>
                                         <h1 class="intro-title mb-4">
-                                            <span class="color-b">204 </span> Alira
+                                            <span class="color-b">901 </span> Alira
                                             <br> Roan Road One
                                         </h1>
                                         <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                                            <a href="#"><span class="price-a">rent | &#x20B9; 3500</span></a>
                                         </p>
                                     </div>
                                 </div>
@@ -188,13 +184,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card-box-c foo">
+                        <div class="card-box-c foo ">
                             <div class="card-header-c d-flex">
                                 <div class="card-box-ico">
                                     <span class="bi bi-cart"></span>
                                 </div>
                                 <div class="card-title-c align-self-center">
-                                    <h2 class="title-c">Lifestyle</h2>
+                                    <h2 class="title-c">Better Lifestyle</h2>
                                 </div>
                             </div>
                             <div class="card-body-c">
@@ -205,11 +201,6 @@
                                     nec, egestas non nisi.
                                 </p>
                             </div>
-                            <div class="card-footer-c">
-                                <a href="#" class="link-c link-icon">Read more
-                                    <span class="bi bi-chevron-right"></span>
-                                </a>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -219,7 +210,7 @@
                                     <span class="bi bi-calendar4-week"></span>
                                 </div>
                                 <div class="card-title-c align-self-center">
-                                    <h2 class="title-c">Loans</h2>
+                                    <h2 class="title-c">Better property </h2>
                                 </div>
                             </div>
                             <div class="card-body-c">
@@ -229,11 +220,6 @@
                                     aliquet elit, eget tincidunt
                                     nibh pulvinar a.
                                 </p>
-                            </div>
-                            <div class="card-footer-c">
-                                <a href="#" class="link-c link-icon">Read more
-                                    <span class="bi bi-calendar4-week"></span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -255,11 +241,6 @@
                                     nec, egestas non nisi.
                                 </p>
                             </div>
-                            <div class="card-footer-c">
-                                <a href="#" class="link-c link-icon">Read more
-                                    <span class="bi bi-chevron-right"></span>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,10 +254,10 @@
                     <div class="col-md-12">
                         <div class="title-wrap d-flex justify-content-between">
                             <div class="title-box">
-                                <h2 class="title-a">Latest Properties</h2>
+                                <h2 class="title-a">Update On latest Properties</h2>
                             </div>
                             <div class="title-link">
-                                <a href="property-grid.html">All Property
+                                <a href="{{ route('user.property_grid') }}">All Property
                                     <span class="bi bi-chevron-right"></span>
                                 </a>
                             </div>
@@ -296,15 +277,16 @@
                                     <div class="card-overlay-a-content">
                                         <div class="card-header-a">
                                             <h2 class="card-title-a">
-                                                <a href="property-single.html">206 Mount
+                                                <a href="">206 Mount
                                                     <br /> Olive Road Two</a>
                                             </h2>
                                         </div>
                                         <div class="card-body-a">
                                             <div class="price-box d-flex">
-                                                <span class="price-a">rent | $ 12.000</span>
+                                                <span class="price-a">rent | &#x20B9; 3599</span>
                                             </div>
-                                            <a href="#" class="link-a">Click here to view
+                                            <a href="{{ route('user.property_grid') }}" class="link-a">Click here to
+                                                view
                                                 <span class="bi bi-chevron-right"></span>
                                             </a>
                                         </div>
@@ -344,15 +326,16 @@
                                     <div class="card-overlay-a-content">
                                         <div class="card-header-a">
                                             <h2 class="card-title-a">
-                                                <a href="property-single.html">157 West
+                                                <a href="">157 West
                                                     <br /> Central Park</a>
                                             </h2>
                                         </div>
                                         <div class="card-body-a">
                                             <div class="price-box d-flex">
-                                                <span class="price-a">rent | $ 12.000</span>
+                                                <span class="price-a">rent | &#x20B9; 9999</span>
                                             </div>
-                                            <a href="property-single.html" class="link-a">Click here to view
+                                            <a href="{{ route('user.property_single') }}" class="link-a">Click here
+                                                to view
                                                 <span class="bi bi-chevron-right"></span>
                                             </a>
                                         </div>
@@ -392,15 +375,16 @@
                                     <div class="card-overlay-a-content">
                                         <div class="card-header-a">
                                             <h2 class="card-title-a">
-                                                <a href="property-single.html">245 Azabu
+                                                <a href="">245 Azabu
                                                     <br /> Nishi Park let</a>
                                             </h2>
                                         </div>
                                         <div class="card-body-a">
                                             <div class="price-box d-flex">
-                                                <span class="price-a">rent | $ 12.000</span>
+                                                <span class="price-a">rent | &#x20B9; 6499</span>
                                             </div>
-                                            <a href="property-single.html" class="link-a">Click here to view
+                                            <a href="{{ route('user.property_single') }}l" class="link-a">Click here
+                                                to view
                                                 <span class="bi bi-chevron-right"></span>
                                             </a>
                                         </div>
@@ -440,15 +424,16 @@
                                     <div class="card-overlay-a-content">
                                         <div class="card-header-a">
                                             <h2 class="card-title-a">
-                                                <a href="property-single.html">204 Montal
+                                                <a href="">204 Montal
                                                     <br /> South Bela Two</a>
                                             </h2>
                                         </div>
                                         <div class="card-body-a">
                                             <div class="price-box d-flex">
-                                                <span class="price-a">rent | $ 12.000</span>
+                                                <span class="price-a">rent | &#x20B9; 4999</span>
                                             </div>
-                                            <a href="property-single.html" class="link-a">Click here to view
+                                            <a href="{{ route('user.property_single') }}" class="link-a">Click here
+                                                to view
                                                 <span class="bi bi-chevron-right"></span>
                                             </a>
                                         </div>
@@ -495,7 +480,7 @@
                                 <h2 class="title-a">Best Agents</h2>
                             </div>
                             <div class="title-link">
-                                <a href="agents-grid.html">All Agents
+                                <a href="{{ route('user.agents_grid') }}">All Agents
                                     <span class="bi bi-chevron-right"></span>
                                 </a>
                             </div>
@@ -512,8 +497,8 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Margaret Sotillo
-                                                <br> Escala</a>
+                                            <a href="{{ route('user.agent_single') }}" class="link-two">Tirth Panchal
+                                                <br> </a>
                                         </h3>
                                     </div>
                                 </div>
@@ -568,8 +553,8 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Stiven Spilver
-                                                <br> Darw</a>
+                                            <a href="agent-single.html" class="link-two">Arnold Macwan
+                                            </a>
                                         </h3>
                                     </div>
                                 </div>
@@ -624,8 +609,7 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Emma Toledo
-                                                <br> Cascada</a>
+                                            <a href="agent-single.html" class="link-two">Dharmik Halani</a>
                                         </h3>
                                     </div>
                                 </div>
@@ -704,40 +688,16 @@
                                 <div class="card-overlay">
                                     <div class="card-header-b">
                                         <div class="card-category-b">
-                                            <a href="#" class="category-b">House</a>
+                                            <a href="" class="category-b">House on rent soon</a>
                                         </div>
                                         <div class="card-title-b">
                                             <h2 class="title-2">
-                                                <a href="blog-single.html">House is comming
+                                                <a href="blog-single.html">House is comming at Maldives
                                                     <br> new</a>
                                             </h2>
                                         </div>
                                         <div class="card-date">
-                                            <span class="date-b">18 Sep. 2017</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End carousel item -->
-
-                        <div class="carousel-item-c swiper-slide">
-                            <div class="card-box-b card-shadow news-box">
-                                <div class="img-box-b">
-                                    <img src="assets/img/post-5.jpg" alt="" class="img-b img-fluid">
-                                </div>
-                                <div class="card-overlay">
-                                    <div class="card-header-b">
-                                        <div class="card-category-b">
-                                            <a href="#" class="category-b">Travel</a>
-                                        </div>
-                                        <div class="card-title-b">
-                                            <h2 class="title-2">
-                                                <a href="blog-single.html">Travel is comming
-                                                    <br> new</a>
-                                            </h2>
-                                        </div>
-                                        <div class="card-date">
-                                            <span class="date-b">18 Sep. 2017</span>
+                                            <span class="date-b">18 feb. 2024</span>
                                         </div>
                                     </div>
                                 </div>
@@ -752,16 +712,16 @@
                                 <div class="card-overlay">
                                     <div class="card-header-b">
                                         <div class="card-category-b">
-                                            <a href="#" class="category-b">Park</a>
+                                            <a href="#" class="category-b">Home to Sell</a>
                                         </div>
                                         <div class="card-title-b">
                                             <h2 class="title-2">
-                                                <a href="blog-single.html">Park is comming
+                                                <a href="blog-single.html">Home on sell in Goa
                                                     <br> new</a>
                                             </h2>
                                         </div>
                                         <div class="card-date">
-                                            <span class="date-b">18 Sep. 2017</span>
+                                            <span class="date-b">25 mar. 2023</span>
                                         </div>
                                     </div>
                                 </div>
@@ -780,12 +740,12 @@
                                         </div>
                                         <div class="card-title-b">
                                             <h2 class="title-2">
-                                                <a href="#">Travel is comming
+                                                <a href="#">Travel packages are comming
                                                     <br> new</a>
                                             </h2>
                                         </div>
                                         <div class="card-date">
-                                            <span class="date-b">18 Sep. 2017</span>
+                                            <span class="date-b">18 Sep. 2024</span>
                                         </div>
                                     </div>
                                 </div>
@@ -885,13 +845,13 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <section class="section-footer">
+    <section class="section-footer bg-secondary text-white">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-4">
+                <div class="col-6 col-md">
                     <div class="widget-a">
                         <div class="w-header-a">
-                            <h3 class="w-title-a text-brand">EstateAgency</h3>
+                            <h3 class="w-title-a text-brand">RentPortal</h3>
                         </div>
                         <div class="w-body-a">
                             <p class="w-text-a color-text-a">
@@ -903,16 +863,16 @@
                         <div class="w-footer-a">
                             <ul class="list-unstyled">
                                 <li class="color-a">
-                                    <span class="color-text-a">Phone .</span> contact@example.com
+                                    <span class="color-text-a">Phone .</span>  + 02 65685457002
                                 </li>
                                 <li class="color-a">
-                                    <span class="color-text-a">Email .</span> +54 356 945234
+                                    <span class="color-text-a">Email .</span> rentportal@outlook.com
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 section-md-t3">
+                <div class="col-6 col-md">
                     <div class="widget-a">
                         <div class="w-header-a">
                             <h3 class="w-title-a text-brand">The Company</h3>
@@ -943,35 +903,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 section-md-t3">
-                    <div class="widget-a">
-                        <div class="w-header-a">
-                            <h3 class="w-title-a text-brand">International sites</h3>
-                        </div>
-                        <div class="w-body-a">
-                            <ul class="list-unstyled">
-                                <li class="item-list-a">
-                                    <i class="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="bi bi-chevron-right"></i> <a href="#">China</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="bi bi-chevron-right"></i> <a href="#">Argentina</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="bi bi-chevron-right"></i> <a href="#">Singapore</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="bi bi-chevron-right"></i> <a href="#">Philippines</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -979,44 +911,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <nav class="nav-footer">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">About</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Property</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
                     <div class="socials-a">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.facebook.com" target="_blank">
                                     <i class="bi bi-facebook" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.twitter.com" target="_blank">
                                     <i class="bi bi-twitter" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.instagram.com" target="_blank">
                                     <i class="bi bi-instagram" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.linkedin.com" target="_blank">
                                     <i class="bi bi-linkedin" aria-hidden="true"></i>
                                 </a>
                             </li>
@@ -1025,17 +938,8 @@
                     <div class="copyright-footer">
                         <p class="copyright color-text-a">
                             &copy; Copyright
-                            <span class="color-a">EstateAgency</span> All Rights Reserved.
+                            <span class="color-a">RentalPortal</span> All Rights Reserved.
                         </p>
-                    </div>
-                    <div class="credits">
-                        <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
-          -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
                     </div>
                 </div>
             </div>
@@ -1043,16 +947,16 @@
     </footer><!-- End  Footer -->
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    <a href="" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
 
