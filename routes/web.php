@@ -31,5 +31,13 @@ Route::middleware('auth')->group(function () {
     // for users
     Route::prefix('user')->name('user.')->group(function () {
         Route::get('/', [userController::class, 'index'])->name('index');
+        Route::get('/about', [userController::class, 'about'])->name('about');
+        Route::get('/contact', [userController::class, 'contact'])->name('contact');
+        Route::get('/agentSingle', [userController::class, 'agent_single'])->name('agent_single');
+        Route::get('/agentsGrid', [userController::class, 'agents_grid'])->name('agents_grid');
+        Route::get('/blogrid', [userController::class, 'blog_grid'])->name('blog_grid');
+        Route::get('/blogsingle', [userController::class, 'blog_single'])->name('blog_single');
+        Route::get('/property_grid', [userController::class, 'property_grid'])->name('property_grid');
+        Route::get('/property_single', [userController::class, 'property_single'])->name('property_single');
     });
 });
