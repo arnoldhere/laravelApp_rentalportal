@@ -440,7 +440,7 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="{{ route('user.agent_single') }}" class="link-two">Tirth Panchal
+                                            <a href="{{ route('user.agent_single') }}" class="link-two">Elice warner
                                                 <br> </a>
                                         </h3>
                                     </div>
@@ -496,7 +496,7 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Arnold Macwan
+                                            <a href="agent-single.html" class="link-two">Shang chi
                                             </a>
                                         </h3>
                                     </div>
@@ -552,7 +552,7 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Dharmik Halani</a>
+                                            <a href="agent-single.html" class="link-two">Natasha</a>
                                         </h3>
                                     </div>
                                 </div>

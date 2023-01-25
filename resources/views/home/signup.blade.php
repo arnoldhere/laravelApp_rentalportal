@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    @include('sweetalert::alert')
+    @include('sweetalert::alert');
     @include('layout.err');
 
     <div class="limiter">

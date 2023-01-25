@@ -76,7 +76,7 @@
                     <div class="col-md-12 section-t8 position-relative">
                         <div class="row">
                             <div class="col-md-6 col-lg-5">
-                                <img src="{{ asset('assets/img/about-2.jpg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/img/agent-3.jpg') }}" alt="" class="img-fluid">
                             </div>
                             <div class="col-lg-2  d-none d-lg-block position-relative">
                                 <div class="title-vertical d-flex justify-content-start">
@@ -137,8 +137,8 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="route('user.agent_single')" class="link-two">Margaret Sotillo
-                                                <br> Escala</a>
+                                            <a href="" class="link-two">Dharmik Halani
+                                            </a>
                                         </h3>
                                     </div>
                                 </div>
@@ -187,14 +187,15 @@
                     <div class="col-md-4">
                         <div class="card-box-d">
                             <div class="card-img-d">
-                                <img src="assets/img/agent-6.jpg" alt="" class="img-d img-fluid">
+                                <img src="{{ asset('assets/img/agent-6.jpg') }}" alt=""
+                                    class="img-d img-fluid">
                             </div>
                             <div class="card-overlay card-overlay-hover">
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Stiven Spilver
-                                                <br> Darw</a>
+                                            <a href="" class="link-two">Arnold Macwam
+                                            </a>
                                         </h3>
                                     </div>
                                 </div>
@@ -248,14 +249,15 @@
                     <div class="col-md-4">
                         <div class="card-box-d">
                             <div class="card-img-d">
-                                <img src="assets/img/agent-5.jpg" alt="" class="img-d img-fluid">
+                                <img src="{{ asset('assets/img/agent-5.jpg') }}" alt=""
+                                    class="img-d img-fluid">
                             </div>
                             <div class="card-overlay card-overlay-hover">
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Emma Toledo
-                                                <br> Cascada</a>
+                                            <a href="" class="link-two">Tirth Panchal
+                                            </a>
                                         </h3>
                                     </div>
                                 </div>
@@ -314,7 +316,8 @@
 
     @include('user.footer');
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
