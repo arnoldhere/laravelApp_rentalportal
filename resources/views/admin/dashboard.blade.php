@@ -15,7 +15,7 @@
     <!-- CSS Files -->
     <link href="{{ asset('admin/assets/css/black-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
 </head>
-
+{{-- content --}}
 <body class="">
     <div class="wrapper">
         <div class="sidebar">

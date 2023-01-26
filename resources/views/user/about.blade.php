@@ -79,7 +79,7 @@
                                 <img src="{{ asset('assets/img/agent-3.jpg') }}" alt="" class="img-fluid">
                             </div>
                             <div class="col-lg-2  d-none d-lg-block position-relative">
-                                <div class="title-vertical d-flex justify-content-start">
+                                <div class="title-vertical d-flex justify-content-start ">
                                     <span>RentalPortal Exclusive Property</span>
                                 </div>
                             </div>
