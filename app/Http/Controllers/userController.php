@@ -56,7 +56,7 @@ class userController extends Controller
 
         if (isset($feedbacktbl)) {
             Alert::success('Sent', 'Message has been stored , response will given to you soon !');
-            return redirect()->back();
+            return redirect()->route('user.about');
         } else {
             Alert::error('Failed', 'Failed to send ! try again...');
             return redirect()->route('user.contact');
