@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     // for admin
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [adminController::class, 'dashboard'])->name('dashboard');
+        Route::get('/team', [adminController::class, 'team'])->name('team');
     });
 
     // for users
