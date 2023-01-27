@@ -31,12 +31,15 @@ Route::middleware('auth')->group(function () {
     // for admin
     Route::prefix('admin')->name('admin.')->group(function () {
 
+        Route::get('/index', [adminController::class, 'index'])->name('index');
         Route::get('/dashboard', [adminController::class, 'dashboard'])->name('dashboard');
 
         Route::get('/team', [adminController::class, 'team'])->name('team');
         Route::post('/addAgent', [adminController::class, 'addAgent'])->name('addAgent');
         Route::get('/deleteagent/{id}', [adminController::class, 'deleteAgent'])->name('deleteagent');
         Route::post('/editagent', [adminController::class, 'updateAgent'])->name('editagent');
+
+        Route::get('/property', [adminController::class, 'properties'])->name('listproperty');
     });
 
     // for users

@@ -1,6 +1,6 @@
 @extends('admin.index')
 @section('subtitle')
-Dashboard
+Properties
 @endsection
 @section('content')
 @endsection

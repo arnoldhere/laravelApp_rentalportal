@@ -29,7 +29,7 @@ class homeController extends Controller
             $pwdValidate = 'admin';
             if ($emailValidate == $request->email && $pwdValidate == $request->password) {
                 Alert::success('Login', "Welcome Admin !");
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.index');
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");
                 return redirect()->route('login');
