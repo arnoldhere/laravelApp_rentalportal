@@ -15,7 +15,7 @@ use App\Models\forgetPassword;
 
 class homeController extends Controller
 {
-    // login authentication
+    // ===================== login authentication ===================== //
     public function login()
     {
         return view('home.login');
@@ -53,7 +53,7 @@ class homeController extends Controller
 
 
 
-    // signup authentication
+    //=====================  signup authentication ===================== //
     public function signup()
     {
         return view('home.signup');
@@ -86,19 +86,37 @@ class homeController extends Controller
         }
     }
 
+    // ===================== logout kill[session] ===================== //
     public function logout()
     {
 
         return redirect()->route('login');
     }
-
-
-
-    // forgot password process
+    // =====================  forgot password process ===================== //
     public function forgotPassword()
     {
         return view('home.forgotPassword');
     }
+
+    public function setPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+        $user = userModel::where('email', $request->email)->first();
+        if ($user) {
+            $otp = random_int(1000, 9999);
+            $fg = new forgetPassword();
+            $fg->userId = $user->id;
+            $fg->otp = $otp;
+            $fg->save();
+            return redirect()->route('askOtp')->with('id', $fg->id);
+        } else {
+            Alert::warning("Email not Found");
+            return redirect()->back();
+        }
+    }
+
 
     public function askOTP()
     {
@@ -117,12 +135,9 @@ class homeController extends Controller
         return $request;
     }
 
-    public function setPassword(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email'
-        ]);
-    }
+
+
+    // ================== mails
     public function sendEmail()
     {
         $email = 'official.arnold.mac.2004@gmail.com';

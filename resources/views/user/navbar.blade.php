@@ -29,7 +29,7 @@
                             <a class="dropdown-item " href="{{ route('user.property_single') }}">Property Single</a>
                             <a class="dropdown-item " href="{{ route('user.blog_single') }}">Blog Single</a>
                             <a class="dropdown-item " href="{{ route('user.agents_grid') }}">Agents Grid</a>
-                            <a class="dropdown-item " href="{{ route('user.agent_single') }}">Agent Single</a>
+                            <!-- <a class="dropdown-item " href="{{ route('user.agent_single') }}">Agent Single</a> -->
                         </div>
                     </li>
                     <li class="nav-item">

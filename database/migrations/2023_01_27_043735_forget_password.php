@@ -14,13 +14,12 @@ class ForgetPassword extends Migration
     public function up()
     {
         Schema::create('forgetPasswords', function (Blueprint $table) {
-            $table->engine='InnoDB';
+            $table->engine = 'InnoDB';
             $table->bigIncrements("id");
             $table->bigInteger("userId")->unsigned();
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
             $table->string("otp");
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +30,6 @@ class ForgetPassword extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('forgetPasswords');
     }
 }

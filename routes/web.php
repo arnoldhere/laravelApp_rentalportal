@@ -19,16 +19,24 @@ Route::post('/loginuser', [homeController::class, 'loginuser'])->name('loginuser
 
 Route::get('/logout', [homeController::class, 'logout'])->name('logout');
 
-Route::post('/forgotPassword', [homeController::class, 'forgotPassword'])->name('forgotPassword');
-Route::post('/setpassword',[homeController::class,'setPassword'])->name('setPassword');
-Route::get('/askOtp', [homeController::class, ''])->name('askOtp');
+Route::get('/forgotPassword', [homeController::class, 'forgotPassword'])->name('forgotPassword');
+Route::post('/setpassword', [homeController::class, 'setPassword'])->name('setPassword');
+Route::get('/askOtp', [homeController::class, 'askOTP'])->name('askOtp');
+Route::post('/matchOtp', [homeController::class, 'matchOtp'])->name('matchOtp');
+
+Route::get('/sendemail', [homeController::class, 'sendEmail']);
 
 Route::middleware('auth')->group(function () {
 
     // for admin
     Route::prefix('admin')->name('admin.')->group(function () {
+
         Route::get('/dashboard', [adminController::class, 'dashboard'])->name('dashboard');
+
         Route::get('/team', [adminController::class, 'team'])->name('team');
+        Route::post('/addAgent', [adminController::class, 'addAgent'])->name('addAgent');
+        Route::get('/deleteagent/{id}', [adminController::class, 'deleteAgent'])->name('deleteagent');
+        Route::post('/editagent', [adminController::class, 'updateAgent'])->name('editagent');
     });
 
     // for users

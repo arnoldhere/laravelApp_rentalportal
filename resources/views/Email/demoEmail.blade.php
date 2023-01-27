@@ -1,12 +1,9 @@
-<x-mail::message>
-# Introduction
-
+@component('mail::message')
+# {{ $mailData['title'] }}
 The body of your message.
-
-<x-mail::button :url="''">
+@component('mail::button', ['url' => $mailData['url']])
 Button Text
-</x-mail::button>
-
+@endcomponent
 Thanks,<br>
 {{ config('app.name') }}
-</x-mail::message>
+@endcomponent
