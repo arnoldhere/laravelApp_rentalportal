@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use App\Models\userModel;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailDemo;
+use Symfony\Component\HttpFoundation\Response;
+use App\Models\forgetPassword;
 
 class homeController extends Controller
 {
@@ -89,8 +92,50 @@ class homeController extends Controller
         return redirect()->route('login');
     }
 
+
+
+    // forgot password process
     public function forgotPassword()
     {
         return view('home.forgotPassword');
+    }
+
+    public function askOTP()
+    {
+        return view('home.askOtp');
+    }
+
+    public function matchOTP(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|numeric',
+            'otp' => 'required|numeric|digits:4'
+        ]);
+        $fg = forgetPassword::find($request->id);
+        if ($fg->otp == $request->otp) {
+        }
+        return $request;
+    }
+
+    public function setPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+    }
+    public function sendEmail()
+    {
+        $email = 'official.arnold.mac.2004@gmail.com';
+
+        $mailData = [
+            'title' => 'Demo Email',
+            'url' => 'https://www.positronx.io'
+        ];
+
+        Mail::to($email)->send(new EmailDemo($mailData));
+
+        return response()->json([
+            'message' => 'Email has been sent.'
+        ], Response::HTTP_OK);
     }
 }

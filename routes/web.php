@@ -19,7 +19,9 @@ Route::post('/loginuser', [homeController::class, 'loginuser'])->name('loginuser
 
 Route::get('/logout', [homeController::class, 'logout'])->name('logout');
 
-Route::get('/forgotPassword', [homeController::class, 'forgotPassword'])->name('forgotPassword');
+Route::post('/forgotPassword', [homeController::class, 'forgotPassword'])->name('forgotPassword');
+Route::post('/setpassword',[homeController::class,'setPassword'])->name('setPassword');
+Route::get('/askOtp', [homeController::class, ''])->name('askOtp');
 
 Route::middleware('auth')->group(function () {
 
