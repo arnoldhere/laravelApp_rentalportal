@@ -15,8 +15,7 @@
         Admin Dashboard
     </title>
     <!-- Font Awesome -->
-    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css') }}"
-        rel="stylesheet" />
+    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css') }}" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -27,7 +26,9 @@
 </head>
 {{-- content --}}
 
+
 <body class="">
+    @include('sweetalert::alert')
     <div class="wrapper">
         @include('admin.sidebar')
         <div class="main-panel">

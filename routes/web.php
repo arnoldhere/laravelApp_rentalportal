@@ -26,12 +26,12 @@ Route::post('/matchOtp', [homeController::class, 'matchOtp'])->name('matchOtp');
 
 Route::get('/sendemail', [homeController::class, 'sendEmail']);
 
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
 
     // for admin
     Route::prefix('admin')->name('admin.')->group(function () {
 
-        Route::get('/index', [adminController::class, 'index'])->name('index');
+        // Route::get('/', [adminController::class, 'dashboard'])->name('dashboard');
         Route::get('/dashboard', [adminController::class, 'dashboard'])->name('dashboard');
 
         Route::get('/team', [adminController::class, 'team'])->name('team');
@@ -64,4 +64,4 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/property_single', [userController::class, 'property_single'])->name('property_single');
     });
-});
+// });

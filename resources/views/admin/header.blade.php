@@ -41,7 +41,7 @@
                                             class="nav-item dropdown-item">Settings</a></li> --}}
                                     <li class="dropdown-divider"></li>
                                     <li class="nav-link">
-                                        <a href="{{ route('login') }}" class="nav-item dropdown-item">Log
+                                        <a href="{{ route('logout') }}" class="nav-item dropdown-item">Log
                                             out</a>
                                     </li>
                                 </ul>

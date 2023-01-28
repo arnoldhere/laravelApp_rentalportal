@@ -27,9 +27,14 @@ class homeController extends Controller
         if ($role == 'admin') {
             $emailValidate = 'admin@gmail.com';
             $pwdValidate = 'admin';
-            if ($emailValidate == $request->email && $pwdValidate == $request->password) {
+            // $request->validate([
+            //     'email' => 'required|email',
+            //     'password' => 'required'
+            // ]);
+            // $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            if (($request->email == $emailValidate) && ($request->password == $pwdValidate)) {
                 Alert::success('Login', "Welcome Admin !");
-                return redirect()->route('admin.index');
+                return redirect()->route('admin.dashboard');
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");
                 return redirect()->route('login');
@@ -46,7 +51,7 @@ class homeController extends Controller
                 return redirect()->route('user.index');
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");
-                return redirect()->back();
+                return redirect()->route('login');
             }
         }
     }
@@ -87,9 +92,10 @@ class homeController extends Controller
     }
 
     // ===================== logout kill[session] ===================== //
-    public function logout()
+    public function logout(Request $request)
     {
-
+        $request->session()->forget('user');
+        $request->session()->flush();
         return redirect()->route('login');
     }
     // =====================  forgot password process ===================== //

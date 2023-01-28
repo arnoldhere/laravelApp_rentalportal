@@ -34,7 +34,7 @@ Our Agents
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-default mx-5" type="submit">Login</button>
+                        <button class="btn btn-default mx-5" type="submit">Add</button>
                         <button class="btn btn-default mx-5" type="reset">Cancel</button>
                     </div>
                 </div>
