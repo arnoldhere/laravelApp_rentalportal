@@ -49,7 +49,7 @@ Our Agents
 </div>
 
 <div class="container-fluid">
-    @include('layout.err')
+    {{-- @include('layout.err') --}}
     <div class="modal fade" id="modalupdateform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <form action="{{ route('admin.editagent') }}" method="POST" enctype="multipart/form-data">

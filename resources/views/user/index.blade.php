@@ -32,7 +32,8 @@
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-1.jpg)">
+            <div class="swiper-slide carousel-item-a intro-item bg-image"
+                style="background-image: url(assets/img/slide-1.jpg)">
                 <div class="overlay overlay-a"></div>
                 <div class="intro-content display-table">
                     <div class="table-cell">
@@ -57,7 +58,8 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-2.jpg)">
+            <div class="swiper-slide carousel-item-a intro-item bg-image"
+                style="background-image: url(assets/img/slide-2.jpg)">
                 <div class="overlay overlay-a"></div>
                 <div class="intro-content display-table">
                     <div class="table-cell">
@@ -82,7 +84,8 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-3.jpg)">
+            <div class="swiper-slide carousel-item-a intro-item bg-image"
+                style="background-image: url(assets/img/slide-3.jpg)">
                 <div class="overlay overlay-a"></div>
                 <div class="intro-content display-table">
                     <div class="table-cell">
@@ -422,183 +425,88 @@
                             <div class="title-box">
                                 <h2 class="title-a">Best Agents</h2>
                             </div>
-                            <div class="title-link">
-                                <a href="{{ route('user.agents_grid') }}">All Agents
-                                    <span class="bi bi-chevron-right"></span>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card-box-d">
-                            <div class="card-img-d">
-                                <img src="assets/img/agent-4.jpg" alt="" class="img-d img-fluid">
-                            </div>
-                            <div class="card-overlay card-overlay-hover">
-                                <div class="card-header-d">
-                                    <div class="card-title-d align-self-center">
-                                        <h3 class="title-d">
-                                            <a href="{{ route('user.agent_single') }}" class="link-two">Elice warner
-                                                <br> </a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card-body-d">
-                                    <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
-                                    </p>
-                                    <div class="info-agents color-a">
-                                        <p>
-                                            <strong>Phone: </strong> +54 356 945234
-                                        </p>
-                                        <p>
-                                            <strong>Email: </strong> agents@example.com
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-footer-d">
-                                    <div class="socials-footer d-flex justify-content-center">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-facebook" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-twitter" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-instagram" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card-box-d">
-                            <div class="card-img-d">
-                                <img src="assets/img/agent-1.jpg" alt="" class="img-d img-fluid">
-                            </div>
-                            <div class="card-overlay card-overlay-hover">
-                                <div class="card-header-d">
-                                    <div class="card-title-d align-self-center">
-                                        <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Shang chi
-                                            </a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card-body-d">
-                                    <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
-                                    </p>
-                                    <div class="info-agents color-a">
-                                        <p>
-                                            <strong>Phone: </strong> +54 356 945234
-                                        </p>
-                                        <p>
-                                            <strong>Email: </strong> agents@example.com
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-footer-d">
-                                    <div class="socials-footer d-flex justify-content-center">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-facebook" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-twitter" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-instagram" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                <div class="container-fluid d-flex ">
+                    @foreach ($agents as $agent)
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="carousel-item-c swiper-slide">
+                                    <div class="row-md">
+                                        <div class="col-md mx-2">
+                                            <div class="card-box-d">
+                                                <div class="card-img-d">
+                                                    <img src="{{ asset('admin/agents/' . $agent->profilePhoto) }}"
+                                                        alt="agent pic" class="img-d img-fluid"
+                                                        style="height: 20rem;">
+                                                </div>
+                                                <div class="card-overlay card-overlay-hover">
+                                                    <div class="card-header-d">
+                                                        <div class="card-title-d align-self-center">
+                                                            <h3 class="title-d">
+                                                                <a href="{{ route('user.agent_single') }}"
+                                                                    class="link-two">
+                                                                    {{ $agent->name }}
+                                                                    <br> </a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body-d">
+                                                        <p class="content-d color-text-a">
+                                                            {{ $agent->about }}
+                                                        </p>
+                                                        <div class="info-agents color-a">
+                                                            <p>
+                                                                <strong>Phone: </strong> {{ $agent->phone }}
+                                                            </p>
+                                                            <p>
+                                                                <strong>Email: </strong> {{ $agent->email }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer-d">
+                                                        <div class="socials-footer d-flex justify-content-center">
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="link-one">
+                                                                        <i class="bi bi-facebook"
+                                                                            aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="link-one">
+                                                                        <i class="bi bi-twitter"
+                                                                            aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="link-one">
+                                                                        <i class="bi bi-instagram"
+                                                                            aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="link-one">
+                                                                        <i class="bi bi-linkedin"
+                                                                            aria-hidden="true"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card-box-d">
-                            <div class="card-img-d">
-                                <img src="assets/img/agent-5.jpg" alt="" class="img-d img-fluid">
-                            </div>
-                            <div class="card-overlay card-overlay-hover">
-                                <div class="card-header-d">
-                                    <div class="card-title-d align-self-center">
-                                        <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">Natasha</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card-body-d">
-                                    <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
-                                    </p>
-                                    <div class="info-agents color-a">
-                                        <p>
-                                            <strong>Phone: </strong> +54 356 945234
-                                        </p>
-                                        <p>
-                                            <strong>Email: </strong> agents@example.com
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-footer-d">
-                                    <div class="socials-footer d-flex justify-content-center">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-facebook" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-twitter" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-instagram" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#" class="link-one">
-                                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    <div class="news-carousel-pagination carousel-pagination"></div>
+
                 </div>
+
             </div>
         </section><!-- End Agents Section -->
 
@@ -739,7 +647,8 @@
                                             </p>
                                         </div>
                                         <div class="testimonial-author-box">
-                                            <img src="assets/img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
+                                            <img src="assets/img/mini-testimonial-1.jpg" alt=""
+                                                class="testimonial-avatar">
                                             <h5 class="testimonial-author">Albert & Erika</h5>
                                         </div>
                                     </div>
@@ -768,7 +677,8 @@
                                             </p>
                                         </div>
                                         <div class="testimonial-author-box">
-                                            <img src="assets/img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar">
+                                            <img src="assets/img/mini-testimonial-2.jpg" alt=""
+                                                class="testimonial-avatar">
                                             <h5 class="testimonial-author">Pablo & Emma</h5>
                                         </div>
                                     </div>
@@ -788,7 +698,8 @@
     <!-- ======= Footer ======= -->
     @include('user.footer');
     <div id="preloader"></div>
-    <a href="" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

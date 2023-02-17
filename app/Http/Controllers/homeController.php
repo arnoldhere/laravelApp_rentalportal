@@ -18,7 +18,13 @@ class homeController extends Controller
     // ===================== login authentication ===================== //
     public function login()
     {
-        return view('home.login');
+        if (session()->get('admin')) {
+            return view('admin.dashboard');
+        } else if (session()->get('user')) {
+            return view('user.index');
+        } else {
+            return view('home.login');
+        }
     }
     public function loginuser(Request $request)
     {
@@ -27,13 +33,9 @@ class homeController extends Controller
         if ($role == 'admin') {
             $emailValidate = 'admin@gmail.com';
             $pwdValidate = 'admin';
-            // $request->validate([
-            //     'email' => 'required|email',
-            //     'password' => 'required'
-            // ]);
-            // $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
             if (($request->email == $emailValidate) && ($request->password == $pwdValidate)) {
                 Alert::success('Login', "Welcome Admin !");
+                $request->session()->put("admin", $request->email);  // stores the session 
                 return redirect()->route('admin.dashboard');
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");
@@ -46,8 +48,10 @@ class homeController extends Controller
                 'password' => 'required'
             ]);
             $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            $email = $request->email;
             if ($check) {
                 Alert::success("Login", "Welcome user !");
+                $request->session()->put("user", $email);
                 return redirect()->route('user.index');
             } else {
                 Alert::error('Failed', "Unable to login ... Try again !");

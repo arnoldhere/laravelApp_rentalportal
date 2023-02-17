@@ -9,18 +9,18 @@
             <li>
                 <a href="{{ route('admin.dashboard') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
-                    <span class="text-white">Dashboard</span>
+                    <span class="text-white mx-auto">Dashboard</span>
                 </a>
             </li>
             <li>
                 <a href="{{route('admin.team')}}"><i class="fa-sharp fa-solid fa-user-group"></i>
-                    <span class="text-white mx-3"> Our Team</span>
+                    <span class="text-white mx-auto"> Our Agents</span>
                 </a>
             </li>
             <li>
                 <a href="{{route('admin.listproperty')}}">
                     <i class="fa-solid fa-sign-hanging"></i>
-                    <span class="text-white mx-3">Properties</span>
+                    <span class="text-white mx-auto">Properties</span>
                 </a>
             </li>
         </ul>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\agent;
 use App\Models\feedbackMSg;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Contracts\Session\Session;
@@ -11,7 +12,8 @@ class userController extends Controller
 {
     public function index(Request $request)
     {
-        return view('user.index');
+        $agents = agent::all();
+        return view('user.index', compact('agents'));
     }
     public function about()
     {

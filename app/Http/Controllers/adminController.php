@@ -11,16 +11,28 @@ class adminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        if (session()->get('admin') == "admin@gmail.com") {
+            return view('admin.dashboard');
+        } else {
+            return view('home.login');
+        }
     }
     public function properties()
     {
-        return view('admin.properties');
+        if (session()->get('admin') == "admin@gmail.com") {
+            return view('admin.dashboard');
+        } else {
+            return view('admin.properties');
+        }
     }
     public function team()
     {
-        $agents = agent::all();
-        return view('admin.team', compact('agents'));
+        if (session()->get('admin') == "admin@gmail.com") {
+            $agents = agent::all();
+            return view('admin.team', compact('agents'));
+        } else {
+            return view('home.login');
+        }
     }
     public function addAgent(Request $request)
     {
