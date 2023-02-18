@@ -12,33 +12,62 @@ class userController extends Controller
 {
     public function index(Request $request)
     {
-        $agents = agent::all();
-        return view('user.index', compact('agents'));
+        if (session()->get("user")) {
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view('user.index', compact('agents'), compact('feedbacks'));
+        } else {
+            return view('home.login');
+        }
     }
     public function about()
     {
-        return view('user.about');
+        if (session()->get('user')) {
+            return view('user.about');
+        } else {
+            return view('home.login');
+        }
     }
     public function agent_single()
     {
-        return view('user.agent-single');
+        if (session()->get('user')) {
+            return view('user.agent-single');
+        } else {
+            return view('home.login');
+        }
     }
     public function agents_grid()
     {
-        return view('user.agents-grid');
+        if (session()->get('user')) {
+            return view('user.agents-grid');
+        } else {
+            return view('home.login');
+        }
     }
     public function blog_grid()
     {
-        return view('user.blog-grid');
+        if (session()->get('user')) {
+            return view('user.blog-grid');
+        } else {
+            return view('home.login');
+        }
     }
     public function blog_single()
     {
-        return view('user.blog-single');
+        if (session()->get('user')) {
+            return view('user.blog-single');
+        } else {
+            return view('home.login');
+        }
     }
 
     public function contact()
     {
-        return view('user.contact');
+        if (session()->get('user')) {
+            return view('user.contact');
+        } else {
+            return view('home.login');
+        }
     }
     public function storeFeedback(Request $request)
     {
@@ -58,7 +87,7 @@ class userController extends Controller
 
         if (isset($feedbacktbl)) {
             Alert::success('Sent', 'Message has been stored , response will given to you soon !');
-            return redirect()->route('user.about');
+            return redirect()->route('user.contact');
         } else {
             Alert::error('Failed', 'Failed to send ! try again...');
             return redirect()->route('user.contact');
@@ -67,10 +96,18 @@ class userController extends Controller
 
     public function property_grid()
     {
-        return view('user.property-grid');
+        if (session()->get('user')) {
+            return view('user.property-grid');
+        } else {
+            return view('home.login');
+        }
     }
     public function property_single()
     {
-        return view('user.property-single');
+        if (session()->get('user')) {
+            return view('user.property-single');
+        } else {
+            return view('home.login');
+        }
     }
 }

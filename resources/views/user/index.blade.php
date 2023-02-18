@@ -429,7 +429,11 @@
                     </div>
                 </div>
                 <div class="container-fluid d-flex ">
+                    <?php $cnt = 1; ?>
                     @foreach ($agents as $agent)
+                        <?php if ($cnt > 4) {
+                            break;
+                        } ?>
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="carousel-item-c swiper-slide">
@@ -453,7 +457,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body-d">
-                                                        <p class="content-d color-text-a">
+                                                        <p class="content-d color-text-a -3">
                                                             {{ $agent->about }}
                                                         </p>
                                                         <div class="info-agents color-a">
@@ -502,6 +506,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php $cnt++; ?>
                     @endforeach
                     <div class="news-carousel-pagination carousel-pagination"></div>
 
@@ -625,67 +630,40 @@
 
                 <div id="testimonial-carousel" class="swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="carousel-item-a swiper-slide">
-                            <div class="testimonials-box">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="testimonial-img">
-                                            <img src="assets/img/testimonial-1.jpg" alt="" class="img-fluid">
+                        <?php $flg = 1; ?>
+                        @foreach ($feedbacks as $feedback)
+                            <?php if ($flg > 5) {
+                                break;
+                            } ?>
+                            <div class="carousel-item-a swiper-slide">
+                                <div class="testimonials-box">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="testimonial-img">
+                                                <img src="{{ asset('admin/assets/img/default-avatar.png') }}"
+                                                    alt="" class="img-fluid">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="testimonial-ico">
-                                            <i class="bi bi-chat-quote-fill"></i>
-                                        </div>
-                                        <div class="testimonials-content">
-                                            <p class="testimonial-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-                                                cupiditate ea nam praesentium
-                                                debitis hic ber quibusdam
-                                                voluptatibus officia expedita corpori.
-                                            </p>
-                                        </div>
-                                        <div class="testimonial-author-box">
-                                            <img src="assets/img/mini-testimonial-1.jpg" alt=""
-                                                class="testimonial-avatar">
-                                            <h5 class="testimonial-author">Albert & Erika</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End carousel item -->
-
-                        <div class="carousel-item-a swiper-slide">
-                            <div class="testimonials-box">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="testimonial-img">
-                                            <img src="assets/img/testimonial-2.jpg" alt="" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="testimonial-ico">
-                                            <i class="bi bi-chat-quote-fill"></i>
-                                        </div>
-                                        <div class="testimonials-content">
-                                            <p class="testimonial-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-                                                cupiditate ea nam praesentium
-                                                debitis hic ber quibusdam
-                                                voluptatibus officia expedita corpori.
-                                            </p>
-                                        </div>
-                                        <div class="testimonial-author-box">
-                                            <img src="assets/img/mini-testimonial-2.jpg" alt=""
-                                                class="testimonial-avatar">
-                                            <h5 class="testimonial-author">Pablo & Emma</h5>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="testimonial-ico">
+                                                <i class="bi bi-chat-quote-fill"></i>
+                                            </div>
+                                            <div class="testimonials-content">
+                                                <p class="testimonial-text">
+                                                    {{ $feedback->message }}
+                                                </p>
+                                            </div>
+                                            <div class="testimonial-author-box">
+                                                {{-- <img src="{{asset('')}}" alt=""
+                                                    class="testimonial-avatar"> --}}
+                                                <h5 class="testimonial-author">{{ $feedback->name }}</h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><!-- End carousel item -->
-
+                            </div><!-- End carousel item -->
+                            <?php $flg++; ?>
+                        @endforeach
                     </div>
                 </div>
                 <div class="testimonial-carousel-pagination carousel-pagination"></div>

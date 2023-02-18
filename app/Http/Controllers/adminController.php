@@ -38,7 +38,7 @@ class adminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:agents',
+            'email' => 'required',
             'phone' => 'required|digits:10',
             'about' => 'required',
             'profilePhoto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -87,6 +87,7 @@ class adminController extends Controller
         $request->profilePhoto->move(public_path('admin/agents'), $profilePhoto);
 
 
+        // $agent = agent::find($request->id);
         $agent = agent::find($request->id);
         $agent->name = $request->name;
         $agent->email = $request->email;
