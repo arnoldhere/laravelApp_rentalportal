@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "dflydev/dot-access-data": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
+        "kyslik/column-sortable": "^6.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",

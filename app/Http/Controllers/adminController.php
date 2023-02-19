@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\agent;
+use App\Models\feedbackMSg;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -12,7 +13,9 @@ class adminController extends Controller
     public function dashboard()
     {
         if (session()->get('admin') == "admin@gmail.com") {
-            return view('admin.dashboard');
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view('admin.dashboard' , compact('agents'));
         } else {
             return view('home.login');
         }

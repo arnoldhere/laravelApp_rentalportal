@@ -14,11 +14,20 @@
     <title>
         Admin Dashboard
     </title>
+
+    <!-- MDBootstrap Datatables  -->
+    <link href="{{ asset('mdb/css/addons/datatables2.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{asset('mdb/css/addons')}}" rel="stylesheet"> --}}
+
     <!-- Font Awesome -->
-    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css') }}"
+        rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="{{ asset('https://use.fontawesome.com/releases/v5.0.6/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css') }}" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
     <!-- Nucleo Icons -->
     <link href="{{ asset('admin/assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <!-- CSS Files -->
@@ -52,6 +61,12 @@
     </div>
     @include('admin.set')
 
+    <script>
+        $(document).ready(function() {
+            $('#dtBasicExample').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
     <!--   Core JS Files   -->
     <script src="{{ asset('admin/assets/js/core/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/core/popper.min.js') }}"></script>
@@ -186,6 +201,8 @@
                 application: "black-dashboard-free"
             });
     </script>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 </body>
 
 </html>

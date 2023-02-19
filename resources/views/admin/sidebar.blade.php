@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar mx-2 my-3" style="height:100vh !important;">
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="javascript:void(0)" class="simple-text logo-normal">
