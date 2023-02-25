@@ -5,17 +5,37 @@ namespace App\Http\Controllers;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\agent;
 use App\Models\feedbackMSg;
+use App\Models\userModel;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
+
+    public function destroyUser($id)
+    {
+        userModel::find($id)->delete();
+        Alert::success("Successfully Deleted");
+        return redirect()->route('admin.dashboard');
+    }
 
     public function dashboard()
     {
         if (session()->get('admin') == "admin@gmail.com") {
             $agents = agent::all();
             $feedbacks = feedbackMSg::all();
-            return view('admin.dashboard' , compact('agents'));
+            $users = userModel::all();
+            return view('admin.dashboard', compact('agents'), compact('users'));
+        } else {
+            return view('home.login');
+        }
+    }
+    public function dashboard1()
+    {
+        if (session()->get('admin') == "admin@gmail.com") {
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            $users = userModel::all();
+            return view('admin.dashboard', compact('agents'), compact('users'));
         } else {
             return view('home.login');
         }

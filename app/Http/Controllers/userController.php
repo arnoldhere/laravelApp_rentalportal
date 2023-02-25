@@ -20,6 +20,16 @@ class userController extends Controller
             return view('home.login');
         }
     }
+    public function start(Request $request)
+    {
+        if (session()->get("user")) {
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view('user.index', compact('agents'), compact('feedbacks'));
+        } else {
+            return view('home.login');
+        }
+    }
     public function about()
     {
         if (session()->get('user')) {
