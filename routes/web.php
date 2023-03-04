@@ -8,32 +8,23 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [userController::class, 'start'])->name('start');
-
 Route::get('/login', [homeController::class, 'login'])->name('login');
-
 Route::get('/signup', [homeController::class, 'signup'])->name('signup');
-
 Route::post('/signupUser', [homeController::class, 'signupUser'])->name('signupUser');
-
 Route::post('/loginuser', [homeController::class, 'loginuser'])->name('loginuser');
-
 Route::get('/logout', [homeController::class, 'logout'])->name('logout');
-
 Route::get('/forgotPassword', [homeController::class, 'forgotPassword'])->name('forgotPassword');
 Route::post('/setpassword', [homeController::class, 'setPassword'])->name('setPassword');
 Route::get('/askOtp', [homeController::class, 'askOTP'])->name('askOtp');
 Route::post('/matchOtp', [homeController::class, 'matchOtp'])->name('matchOtp');
-
 Route::get('/sendemail', [homeController::class, 'sendEmail']);
 
-// Route::middleware('auth')->group(function () {
 
 // for admin
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    // Route::get('/', [adminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/', [adminController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard', [adminController::class, 'dashboard'])->name('dashboard');
-    // Route::get('/dash', [adminController::class, 'dashboard1'])->name('dash');
 
     Route::get('/team', [adminController::class, 'team'])->name('team');
     Route::post('/addAgent', [adminController::class, 'addAgent'])->name('addAgent');
@@ -55,15 +46,13 @@ Route::prefix('user')->name('user.')->group(function () {
 
 
     Route::get('/agentSingle', [userController::class, 'agent_single'])->name('agent_single');
-
     Route::get('/agentsGrid', [userController::class, 'agents_grid'])->name('agents_grid');
 
     Route::get('/blogrid', [userController::class, 'blog_grid'])->name('blog_grid');
-
     Route::get('/blogsingle', [userController::class, 'blog_single'])->name('blog_single');
 
     Route::get('/property_grid', [userController::class, 'property_grid'])->name('property_grid');
-
     Route::get('/property_single', [userController::class, 'property_single'])->name('property_single');
+
+    Route::get('/profile', [userController::class, 'showProfile'])->name('profile');
 });
-// });

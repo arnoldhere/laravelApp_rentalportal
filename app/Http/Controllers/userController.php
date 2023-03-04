@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\agent;
 use App\Models\feedbackMSg;
+use App\Models\userModel;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -16,8 +17,14 @@ class userController extends Controller
             $agents = agent::all();
             $feedbacks = feedbackMSg::all();
             return view('user.index', compact('agents'), compact('feedbacks'));
+        } else  if (session()->get('admin')) {
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view('admin.dashboard', compact('agents'), compact('feedbacks'));
         } else {
-            return view('home.login');
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view("home.login", compact('agents'), compact('feedbacks'));
         }
     }
     public function start(Request $request)
@@ -26,8 +33,14 @@ class userController extends Controller
             $agents = agent::all();
             $feedbacks = feedbackMSg::all();
             return view('user.index', compact('agents'), compact('feedbacks'));
+        } else  if (session()->get('admin')) {
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view('admin.dashboard', compact('agents'), compact('feedbacks'));
         } else {
-            return view('home.login');
+            $agents = agent::all();
+            $feedbacks = feedbackMSg::all();
+            return view("home.login", compact('agents'), compact('feedbacks'));
         }
     }
     public function about()
@@ -119,5 +132,10 @@ class userController extends Controller
         } else {
             return view('home.login');
         }
+    }
+    public function showProfile()
+    {
+        
+        return view("user.profile");
     }
 }

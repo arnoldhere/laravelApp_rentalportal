@@ -19,9 +19,9 @@ class homeController extends Controller
     public function login()
     {
         if (session()->get('admin')) {
-            return view('admin.dashboard');
+            return redirect()->route('admin.dashboard');
         } else if (session()->get('user')) {
-            return view('user.index');
+            return redirect()->route('user.index');
         } else {
             return view('home.login');
         }
