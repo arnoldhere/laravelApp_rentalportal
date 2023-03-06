@@ -61,12 +61,12 @@
     </div>
     @include('admin.set')
 
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $('#dtBasicExample').DataTable();
             $('.dataTables_length').addClass('bs-select');
         });
-    </script>
+    </script> -->
     <!--   Core JS Files   -->
     <script src="{{ asset('admin/assets/js/core/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/core/popper.min.js') }}"></script>

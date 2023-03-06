@@ -7,6 +7,8 @@ use App\Models\agent;
 use App\Models\feedbackMSg;
 use App\Models\userModel;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
@@ -21,10 +23,12 @@ class adminController extends Controller
     public function dashboard()
     {
         if (session()->get('admin') == "admin@gmail.com") {
+            Paginator::useBootstrap();
             $agents = agent::all();
             $feedbacks = feedbackMSg::all();
-            $users = userModel::all();
-            return view('admin.dashboard', compact('agents'), compact('users'));
+            // $users = userModel::all();
+            $users = DB::table('users')->paginate(5);
+            return view('admin.dashboard', compact('agents'), compact('users') , ['users'=>$users]);
         } else {
             return view('home.login');
         }
