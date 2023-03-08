@@ -79,13 +79,13 @@
                         <th>{{ $agent->phone }}</th>
                         <th>{{ $agent->about }}</th>
                         <th>
-                            <a href="" class="btn btn-success btn-sm m-2" data-target="#modalupdateform"
+                            <a href="" class=" btn-success btn-sm m-2" data-target="#modalupdateform"
                                 data-toggle="modal">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <a href="{{ route('admin.deleteagent', ['id' => $agent->id]) }}"
                                 onclick="return confirm('Are you sure you want to remove?');"
-                                class="btn btn-danger btn-sm m-2"><i class="fas fa-trash"></i>
+                                class=" btn-danger btn-sm m-2"><i class="fas fa-trash"></i>
                             </a>
                         </th>
                     </tr>

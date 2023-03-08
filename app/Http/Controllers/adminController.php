@@ -47,9 +47,9 @@ class adminController extends Controller
     public function properties()
     {
         if (session()->get('admin') == "admin@gmail.com") {
-            return view('admin.dashboard');
-        } else {
             return view('admin.properties');
+        } else {
+            return view('home.login');
         }
     }
     public function team()
