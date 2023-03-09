@@ -39,13 +39,20 @@
                     <div class="card">
                         <div class="rounded-top text-white d-flex flex-row bg-success" style="height:200px">
                             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
+                                <img src="{{ asset('/userAvatars/'.Auth::user()->avatar) }}" alt="Avatar Image" class="img-fluid img-thumbnail mt-2 mb-2" style="width: 200px; z-index: 1">
                                 <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
                                     Edit profile
                                 </button>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h5></h5>
+                                <h4 class="text-dark">
+                                    {{ 
+                                       Auth::user()->firstname;     
+                                     }}
+                                     </h4>
+                                     <h6 class="text-dark b-50">
+                                        {{ Auth::user()->lastname }}
+                                     </h6>
                                 <p></p>
                             </div>
                         </div>
@@ -58,9 +65,15 @@
                             <div class="mb-5">
                                 <p class="lead fw-normal mb-1 p-2">About</p>
                                 <div class="p-4" style="background-color: #f8f9fa;">
-                                    <p class="font-italic mb-1">Web Developer</p>
-                                    <p class="font-italic mb-1">Lives in New York</p>
-                                    <p class="font-italic mb-0">Photographer</p>
+                                    <p class="font-italic mb-1"> 
+                                        <span class="text-danger">Email :</span> 
+                                        <a href="mailto:{{ Auth::user()->email }}" class="link-item "> {{ Auth::user()->email }}</a>
+                                    </p>
+                                    <p class="font-italic mb-1">
+                                        <span class="text-danger">Phone :</span>
+                                        {{ Auth::user()->phone }}
+                                    </p>
+                                    {{-- <p class="font-italic mb-0">Photographer</p> --}}
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-4">

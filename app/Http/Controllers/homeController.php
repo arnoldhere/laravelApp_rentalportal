@@ -74,14 +74,20 @@ class homeController extends Controller
             'lastname' => "required|min:4",
             'phone' => 'required|digits:10',
             'email' => "required|unique:users",
-            'password' => 'required|min:4|confirmed'
+            'password' => 'required|min:4|confirmed',
+            'avatar'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
+        // avatar config
+        $avatar = str_replace(' ','_',$request->name).''.time().'.'.$request->avatar->extension(); 
+        $request->avatar->move(public_path('userAvatars'),$avatar);
+    
         $user = new userModel();
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
         $user->phone = $request->phone;
         $user->email = $request->email;
+        $user->avatar = $avatar;
         $user->password = Hash::make($request->password);
         $user->type = 1;
         $user->save();

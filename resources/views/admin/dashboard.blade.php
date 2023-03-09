@@ -65,8 +65,13 @@
             </div>
         </div>
     </div>
+    <div class="container bg-secondary">
+        <h3 class="text-center text-dark p-2">
+            Users Signed in
+        </h3>
+    </div>
     <div class="container mt-5">
-        <table class="table table-striped table-hover table-bordered ">
+        <table class=" mt-3 table table-striped table-hover table-bordered">
             <?php $cnt =1 ;?>
             <thead>
                 <tr>
@@ -92,9 +97,9 @@
                     <td>
                         {{ $user->phone }}</td>
                     <td>
-                        {{ $user->avatar }}</td>
+                        <img src="{{ asset('/userAvatars/'.$user->avatar) }}" alt="" width="100px" height="80px">
+                    </td>
                         <td>
-
                             {{-- <a href="{{ route('admin.deleteagent', ['id' => $agent->id]) }}"
                                 onclick="return confirm('Are you sure you want to remove?');"
                                 class="btn btn-danger btn-sm m-2"><i class="fas fa-trash"></i>

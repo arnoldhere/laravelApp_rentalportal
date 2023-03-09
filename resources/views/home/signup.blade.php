@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <!-- <link rel="stylesheet" href="{{ asset('css/utills.css') }}"> -->
     <title>Sign Up | RentPortal</title>
+    <style>
+        .imgbox{
+            display: block;
+            color: gray;
+            background: #80808047;
+            border-radius: 20px;
+            line-height: 1.5;
+            padding: 8px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +37,7 @@
                     <img src="{{ asset('logo.jpg') }}" alt="IMG" height="100%">
                 </div>
 
-                <form class="login100-form validate-form" method="POST" action="{{ route('signupUser') }}">
+                <form class="login100-form validate-form" method="POST" action="{{ route('signupUser') }}" enctype="multipart/form-data">
                     @csrf
                     <span class="login100-form-title">
                         Create account - Sign up
@@ -56,6 +66,7 @@
                             <i class="fa-solid fa-address-book" aria-hidden="true"></i>
                         </span>
                     </div>
+                    
                     {{-- email input --}}
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                         <input class="input100" type="email" name="email" placeholder="Email">
@@ -78,6 +89,16 @@
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+
+                    {{-- avatar  --}}
+                    <div class="imgbox validate-input border-2">
+                        <input class="" style="margin-left: 5rem !important;" type="file" name="avatar" placeholder="Profile">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
