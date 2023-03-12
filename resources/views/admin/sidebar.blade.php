@@ -19,7 +19,7 @@
             <li class="bg-info shadow-5">
                 <a href="{{route('admin.listproperty')}}">
                     <i class="fa-solid fa-sign-hanging"></i>
-                    <span class="text-white mx-auto">Properties</span>
+                    <span class="text-dark mx-auto">Properties</span>
                 </a>
             </li>
         </ul>

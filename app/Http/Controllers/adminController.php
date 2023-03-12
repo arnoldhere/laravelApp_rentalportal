@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\agent;
+use App\Models\cityModel;
 use App\Models\feedbackMSg;
+use App\Models\propertyModel;
 use App\Models\userModel;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -123,10 +125,51 @@ class adminController extends Controller
     //==============================   Properties operations
     public function properties()
     {
+        $cities =  cityModel::all();
+        $properties = propertyModel::all();
         if (session()->get('admin') == "admin@gmail.com") {
-            return view('admin.properties');
+            return view('admin.properties', compact('cities'), compact('properties'));
         } else {
             return view('home.login');
+        }
+    }
+    public function deleteProperty($id)
+    {
+        propertyModel::find($id)->delete();
+        Alert::success('Delete', ' Property Removed successfully');
+        return redirect()->route('admin.listproperty');
+    }
+    public function addProperty(Request $request)
+    {
+
+        $request->validate([
+            'type' => 'required',
+            'status' => 'required',
+            'area' => 'required',
+            'currentPrice' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $image = str_replace(' ', '_', $request->name) . '' . time() . '' . $request->image->extension();
+        $request->image->move(public_path('imgs/propertyImgs'), $image);
+
+        $property = new propertyModel();
+        $property->type = $request->type;
+        $property->status = $request->status;
+        $property->area = $request->area;
+        $property->currentPrice = $request->currentPrice;
+        $property->location = $request->location;
+        $property->description = $request->description;
+        $property->image = $image;
+        $property->save();
+
+        if ($property->save()) {
+            Alert::success("Done", "Property listed");
+            return redirect()->route('admin.listproperty');
+        } else {
+            Alert::error("Failed", "Try again ");
+            return redirect()->route('admin.listproperty');
         }
     }
 }

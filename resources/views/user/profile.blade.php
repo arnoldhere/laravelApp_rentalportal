@@ -40,9 +40,11 @@
                         <div class="rounded-top text-white d-flex flex-row bg-success" style="height:200px">
                             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                                 <img src="{{ asset('/userAvatars/'.Auth::user()->avatar) }}" alt="Avatar Image" class="img-fluid img-thumbnail mt-2 mb-2" style="width: 200px; z-index: 1">
-                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                                    Edit profile
-                                </button>
+                                <a href="{{route('user.editProfilePage',['id'=>Auth::user()->id])}}">
+                                    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
+                                        Edit profile
+                                    </button>
+                                </a>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
                                 <h4 class="text-dark">

@@ -80,7 +80,7 @@ class homeController extends Controller
 
         // avatar config
         $avatar = str_replace(' ','_',$request->name).''.time().'.'.$request->avatar->extension(); 
-        $request->avatar->move(public_path('userAvatars'),$avatar);
+        $request->avatar->move(public_path('imgs/userAvatars'),$avatar);
     
         $user = new userModel();
         $user->firstname = $request->firstname;

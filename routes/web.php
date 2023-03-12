@@ -38,6 +38,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/editagent', [adminController::class, 'updateAgent'])->name('editagent');
 
     Route::get('/property', [adminController::class, 'properties'])->name('listproperty');
+    Route::post('/addProperty', [adminController::class, 'addProperty'])->name('addProperty');
+    Route::get('/delProperty/{id}', [adminController::class, 'deleteProperty'])->name('delProperty');
 });
 
 // for users
@@ -60,4 +62,6 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/property_single', [userController::class, 'property_single'])->name('property_single');
 
     Route::get('/profile', [userController::class, 'showProfile'])->name('profile');
+    Route::get('/editProfilePage/{id}', [userController::class, 'editProfilePage'])->name('editProfilePage');
+    Route::post('/updateProfile', [userController::class, 'updateProfile'])->name('updateProfile');
 });

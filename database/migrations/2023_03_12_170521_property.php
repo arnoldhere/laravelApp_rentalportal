@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('type');
             $table->string('status');
             $table->integer('area');
-            $table->string('currentPrice');
+            $table->integer('currentPrice');
             $table->string('location');
             $table->string('description');
+            $table->string('image');
+            $table->timestamps();
         });
     }
 

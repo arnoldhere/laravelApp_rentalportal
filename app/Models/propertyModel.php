@@ -12,6 +12,6 @@ class propertyModel extends Model
 {
 
     use HasFactory, HasApiTokens, Notifiable;
-    protected $table = "properties";
+    protected $table = "property";
     protected $primaryKey = "id";
 }

@@ -16,4 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/public/userAvatars
+/public//imgs/userAvatars
+/public//imgs/propertyImgs
+/public/admin/agents
