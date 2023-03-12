@@ -110,4 +110,6 @@ Properties
         </tbody>
     </table>
 </div>
+<div class="d-flex">
+</div>
 @endsection

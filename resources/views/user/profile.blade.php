@@ -39,7 +39,7 @@
                     <div class="card">
                         <div class="rounded-top text-white d-flex flex-row bg-success" style="height:200px">
                             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                <img src="{{ asset('/userAvatars/'.Auth::user()->avatar) }}" alt="Avatar Image" class="img-fluid img-thumbnail mt-2 mb-2" style="width: 200px; z-index: 1">
+                                <img src="{{ asset('imgs/userAvatars/'.Auth::user()->avatar) }}" alt="Avatar Image" class="img-fluid img-thumbnail mt-2 mb-2" style="width: 200px; z-index: 1">
                                 <a href="{{route('user.editProfilePage',['id'=>Auth::user()->id])}}">
                                     <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
                                         Edit profile
@@ -78,7 +78,7 @@
                                     {{-- <p class="font-italic mb-0">Photographer</p> --}}
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center mb-4">
+                            {{-- <div class="d-flex justify-content-between align-items-center mb-4">
                                 <p class="lead fw-normal mb-0">Recent photos</p>
                                 <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
                             </div>
@@ -97,7 +97,7 @@
                                 <div class="col">
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp" alt="image 1" class="w-100 rounded-3">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

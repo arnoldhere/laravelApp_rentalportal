@@ -27,13 +27,15 @@
 
 
     @include('user.navbar');
-    <!-- ======= Intro Section ======= -->
+    {{-- <!-- ======= Intro Section ======= -->
     <div class="intro intro-carousel swiper position-relative">
 
         <div class="swiper-wrapper">
-
+                <?php try {
+                    ?>
+            @foreach ($property as $item )
             <div class="swiper-slide carousel-item-a intro-item bg-image"
-                style="background-image: url(assets/img/slide-1.jpg)">
+                style="background-image: url('{{ asset('imgs/propertyImgs/'.$item->image) }}. ')">
                 <div class="overlay overlay-a"></div>
                 <div class="intro-content display-table">
                     <div class="table-cell">
@@ -41,15 +43,11 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="intro-body">
-                                        <p class="intro-title-top">Jaipur
+                                        <p class="intro-title-top">{{ $item->location }}
                                             <br> 302005
                                         </p>
-                                        <h1 class="intro-title mb-4 ">
-                                            <span class="color-b">204 </span>
-                                            <br> Olive Road Two
-                                        </h1>
                                         <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">rent | &#x20B9; 4500</span></a>
+                                            <a href="#"><span class="price-a">{{ $item->status }} | &#x20B9; {{ $item->currentPrice }}</span></a>
                                         </p>
                                     </div>
                                 </div>
@@ -58,61 +56,12 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide carousel-item-a intro-item bg-image"
-                style="background-image: url(assets/img/slide-2.jpg)">
-                <div class="overlay overlay-a"></div>
-                <div class="intro-content display-table">
-                    <div class="table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="intro-body">
-                                        <p class="intro-title-top"> New Goa
-                                            <br> 403 801
-                                        </p>
-                                        <h1 class="intro-title mb-4">
-                                            <span class="color-b">696 </span> Rino
-                                            <br> Venda Road Five
-                                        </h1>
-                                        <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">rent | &#x20B9; 7500</span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide carousel-item-a intro-item bg-image"
-                style="background-image: url(assets/img/slide-3.jpg)">
-                <div class="overlay overlay-a"></div>
-                <div class="intro-content display-table">
-                    <div class="table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="intro-body">
-                                        <p class="intro-title-top"> Mount Abu
-                                            <br> 307501
-                                        </p>
-                                        <h1 class="intro-title mb-4">
-                                            <span class="color-b">901 </span> Alira
-                                            <br> Roan Road One
-                                        </h1>
-                                        <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">rent | &#x20B9; 3500</span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach<?php } catch (\Throwable $th) {
+                echo $th;
+            }?>
         </div>
         <div class="swiper-pagination"></div>
-    </div><!-- End Intro Section -->
+    </div><!-- End Intro Section --> --}}
 
     <main id="main">
 
@@ -212,22 +161,25 @@
                 </div>
                 <div id="property-carousel" class="swiper">
                     <div class="swiper-wrapper">
+                        @foreach ($properti as $property )
                         <div class="carousel-item-b swiper-slide">
                             <div class="card-box-a card-shadow">
                                 <div class="img-box-a">
-                                    <img src="assets/img/property-6.jpg" alt="" class="img-a img-fluid">
+                                    <img src="{{ asset('imgs/propertyImgs/'. $property->image ) }}" alt=""  class="img-a img-thumbnail " style="
+                                        height: 400px !important;
+                                        ">
                                 </div>
                                 <div class="card-overlay">
                                     <div class="card-overlay-a-content">
                                         <div class="card-header-a">
                                             <h2 class="card-title-a">
-                                                <a href="">206 Mount
-                                                    <br /> Olive Road Two</a>
+                                                <a href="">{{ $property->type }}
+                                                    <br /> {{ $property->location }}</a>
                                             </h2>
                                         </div>
                                         <div class="card-body-a">
                                             <div class="price-box d-flex">
-                                                <span class="price-a">rent | &#x20B9; 3599</span>
+                                                <span class="price-a">{{ $property->status }} | &#x20B9; {{ $property->currentPrice }}</span>
                                             </div>
                                             <a href="{{ route('user.property_grid') }}" class="link-a">Click here to
                                                 view
@@ -238,28 +190,19 @@
                                             <ul class="card-info d-flex justify-content-around">
                                                 <li>
                                                     <h4 class="card-info-title">Area</h4>
-                                                    <span>340m
+                                                    <span>{{ $property->area }}m
                                                         <sup>2</sup>
                                                     </span>
-                                                </li>
-                                                <li>
-                                                    <h4 class="card-info-title">Beds</h4>
-                                                    <span>2</span>
-                                                </li>
-                                                <li>
-                                                    <h4 class="card-info-title">Baths</h4>
-                                                    <span>4</span>
-                                                </li>
-                                                <li>
-                                                    <h4 class="card-info-title">Garages</h4>
-                                                    <span>1</span>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- End carousel item -->
+                        </div>
+                        
+                        @endforeach
+                        <!-- End carousel item -->
                     </div>
                 </div>
                 <div class="propery-carousel-pagination carousel-pagination"></div>
@@ -466,64 +409,9 @@
             </div>
         </section><!-- End Latest News Section -->
 
-        <!-- ======= Testimonials Section ======= -->
-        <section class="section-testimonials section-t8 nav-arrow-a">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <div class="title-box">
-                                <h2 class="title-a">Testimonials</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="testimonial-carousel" class="swiper">
-                    <div class="swiper-wrapper">
-                        <?php $flg = 1; ?>
-                        @foreach ($feedbacks as $feedback)
-                            <?php if ($flg > 5) {
-                                break;
-                            } ?>
-                            <div class="carousel-item-a swiper-slide">
-                                <div class="testimonials-box">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6">
-                                            <div class="testimonial-img">
-                                                <img src="{{ asset('admin/assets/img/default-avatar.png') }}"
-                                                    alt="" class="img-fluid">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6">
-                                            <div class="testimonial-ico">
-                                                <i class="bi bi-chat-quote-fill"></i>
-                                            </div>
-                                            <div class="testimonials-content">
-                                                <p class="testimonial-text">
-                                                    {{ $feedback->message }}
-                                                </p>
-                                            </div>
-                                            <div class="testimonial-author-box">
-                                                {{-- <img src="{{asset('')}}" alt=""
-                                                    class="testimonial-avatar"> --}}
-                                                <h5 class="testimonial-author">{{ $feedback->name }}</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End carousel item -->
-                            <?php $flg++; ?>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="testimonial-carousel-pagination carousel-pagination"></div>
-
-            </div>
-        </section><!-- End Testimonials Section -->
-
+     
     </main><!-- End #main -->
-
+    
     <!-- ======= Footer ======= -->
     @include('user.footer');
     <div id="preloader"></div>

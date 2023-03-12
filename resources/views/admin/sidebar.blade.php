@@ -5,21 +5,27 @@
             </a>
         </div>
         <ul class="nav" >
-            <li class="bg-info">
+            <li class="bg-info my-4">
                 <a href="{{ route('admin.dashboard') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <span class="text-dark mx-auto">Dashboard</span>
                 </a>
             </li>
-            <li class="bg-danger">
+            <li class="bg-danger my-4">
                 <a href="{{route('admin.team')}}"><i class="fa-sharp fa-solid fa-user-group"></i>
                     <span class="text-dark mx-auto"> Our Agents</span>
                 </a>
             </li>
-            <li class="bg-info shadow-5">
+            <li class="bg-info my-4">
                 <a href="{{route('admin.listproperty')}}">
                     <i class="fa-solid fa-sign-hanging"></i>
                     <span class="text-dark mx-auto">Properties</span>
+                </a>
+            </li>
+            <li class="bg-warning my-4">
+                <a href="{{route('admin.reviews')}}">
+                    <i class="fa-solid fa-sign-hanging"></i>
+                    <span class="text-dark mx-auto">Reviews</span>
                 </a>
             </li>
         </ul>

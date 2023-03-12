@@ -29,7 +29,6 @@ class adminController extends Controller
         }
     }
 
-    //==============================   User operations
     public function deleteUser($id)
     {
         userModel::find($id)->delete();
@@ -39,9 +38,11 @@ class adminController extends Controller
     //==============================   Agent operations
     public function agent()
     {
+        Paginator::useBootstrap();
         if (session()->get('admin') == "admin@gmail.com") {
             $agents = agent::all();
-            return view('admin.team', compact('agents'));
+            $pagAgents = DB::table('agents')->paginate('5');
+            return view('admin.team', compact('agents'), ['pagAgents' => $pagAgents]);
         } else {
             return view('home.login');
         }
@@ -125,10 +126,12 @@ class adminController extends Controller
     //==============================   Properties operations
     public function properties()
     {
+        Paginator::useBootstrap();
         $cities =  cityModel::all();
         $properties = propertyModel::all();
+        $pagProperty = DB::table('property')->paginate('5');
         if (session()->get('admin') == "admin@gmail.com") {
-            return view('admin.properties', compact('cities'), compact('properties'));
+            return view('admin.properties', compact('cities'), compact('properties'),['pagProperty'=>$pagProperty]);
         } else {
             return view('home.login');
         }
@@ -171,5 +174,19 @@ class adminController extends Controller
             Alert::error("Failed", "Try again ");
             return redirect()->route('admin.listproperty');
         }
+    }
+    //========================== reviews 
+    public function reviews()
+    {
+        Paginator::useBootstrap();
+        $feedbacks = feedbackMSg::all();
+        $feedbacks = DB::table('feedbacks')->paginate(5);
+        return view('admin.reviews', compact('feedbacks'), ['feedbacks' => $feedbacks]);
+    }
+    public function deleteReview($id)
+    {
+        feedbackMSg::find($id)->delete();
+        Alert::success("Deleted");
+        return redirect()->route('admin.reviews');
     }
 }

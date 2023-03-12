@@ -92,4 +92,7 @@
             </tbody>
         </table>
     </div>
+    <div class="d-flex">
+            {{ $pagAgents->links() }}
+        </div>
 @endsection

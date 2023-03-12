@@ -40,6 +40,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/property', [adminController::class, 'properties'])->name('listproperty');
     Route::post('/addProperty', [adminController::class, 'addProperty'])->name('addProperty');
     Route::get('/delProperty/{id}', [adminController::class, 'deleteProperty'])->name('delProperty');
+
+    Route::get('/reviews', [adminController::class, 'reviews'])->name('reviews');
+    Route::get('/deleteReview/{id}', [adminController::class, 'deleteReview'])->name('deleteReview');
 });
 
 // for users
@@ -56,10 +59,8 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/agentsGrid', [userController::class, 'agents_grid'])->name('agents_grid');
 
     Route::get('/blogrid', [userController::class, 'blog_grid'])->name('blog_grid');
-    Route::get('/blogsingle', [userController::class, 'blog_single'])->name('blog_single');
 
     Route::get('/property_grid', [userController::class, 'property_grid'])->name('property_grid');
-    Route::get('/property_single', [userController::class, 'property_single'])->name('property_single');
 
     Route::get('/profile', [userController::class, 'showProfile'])->name('profile');
     Route::get('/editProfilePage/{id}', [userController::class, 'editProfilePage'])->name('editProfilePage');

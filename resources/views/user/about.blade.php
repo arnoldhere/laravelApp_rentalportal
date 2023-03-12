@@ -60,58 +60,60 @@
         <!-- ======= About Section ======= -->
         <section class="section-about">
             <div class="container">
+            <!-- ======= Testimonials Section ======= -->
+        <section class="section-testimonials section-t8 nav-arrow-a">
+            <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 position-relative">
-                        <div class="about-img-box">
-                            <img src="assets/img/slide-about-1.jpg" alt="" class="img-fluid">
-                        </div>
-                        <div class="sinse-box">
-                            <h3 class="sinse-title">Rental Portal
-                                <span></span>
-                                <br> Since 2022
-                            </h3>
-                            <p>Art & Creative</p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 section-t8 position-relative">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-5">
-                                <img src="{{ asset('assets/img/agent-3.jpg') }}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col-lg-2  d-none d-lg-block position-relative">
-                                <div class="title-vertical d-flex justify-content-start ">
-                                    <span>RentalPortal Exclusive Property</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-5 section-md-t3">
-                                <div class="title-box-d">
-                                    <h3 class="title-d">Sed
-                                        <span class="color-d">porttitor</span> lectus
-                                        <br> nibh.
-                                    </h3>
-                                </div>
-                                <p class="color-text-a">
-                                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo,
-                                    lacinia eget
-                                    consectetur sed, convallis
-                                    at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-                                    Vestibulum
-                                    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
-                                    velit
-                                    neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                </p>
-                                <p class="color-text-a">
-                                    Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed,
-                                    convallis at tellus.
-                                    Mauris blandit aliquet
-                                    elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
-                                    sed,
-                                    convallis at tellus.
-                                </p>
+                    <div class="col-md-12">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <div class="title-box">
+                                <h2 class="title-a">Testimonials</h2>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div id="testimonial-carousel" class="swiper">
+                    <div class="swiper-wrapper">
+                        <?php $flg = 1; ?>
+                        @foreach ($feedbacks as $feedback)
+                            <?php if ($flg > 5) {
+                                break;
+                            } ?>
+                            <div class="carousel-item-a swiper-slide">
+                                <div class="testimonials-box">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="testimonial-img">
+                                                <img src="{{ asset('admin/assets/img/default-avatar.png') }}"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="testimonial-ico">
+                                                <i class="bi bi-chat-quote-fill"></i>
+                                            </div>
+                                            <div class="testimonials-content">
+                                                <p class="testimonial-text">
+                                                    {{ $feedback->message }}
+                                                </p>
+                                            </div>
+                                            <div class="testimonial-author-box">
+                                                <h5 class="testimonial-author">{{ $feedback->name }}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End carousel item -->
+                            <?php $flg++; ?>
+                        @endforeach
+                    </div>
+                </div> 
+                <div class="testimonial-carousel-pagination carousel-pagination"></div>
+
+            </div>
+        </section><!-- End Testimonials Section --> --}}
+
             </div>
         </section>
 
@@ -151,7 +153,7 @@
                                             <strong>Phone: </strong> +54 356 945234
                                         </p>
                                         <p>
-                                            <strong>Email: </strong> agents@example.com
+                                            <strong>Email: </strong> dkhalani@gmail.com
                                         </p>
                                     </div>
                                 </div>
@@ -187,8 +189,8 @@
                     <div class="col-md-4">
                         <div class="card-box-d">
                             <div class="card-img-d">
-                                <img src="{{ asset('assets/img/agent-6.jpg') }}" alt=""
-                                    class="img-d img-fluid">
+                                <img src="{{ asset('imgs/arnold.JPG') }}" alt=""
+                                    class="img-d img-fluid" height="50rem">
                             </div>
                             <div class="card-overlay card-overlay-hover">
                                 <div class="card-header-d">
@@ -201,14 +203,14 @@
                                 </div>
                                 <div class="card-body-d">
                                     <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                                        Very talented Programmer
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
-                                            <strong>Phone: </strong> +54 356 945234
+                                            <strong>Phone: </strong> +91 8200781208
                                         </p>
                                         <p>
-                                            <strong>Email: </strong> agents@example.com
+                                            <strong>Email: </strong> official.arnold.mac.2004@gmail.com
                                         </p>
                                     </div>
                                 </div>
@@ -263,14 +265,14 @@
                                 </div>
                                 <div class="card-body-d">
                                     <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                                        A good Content maker
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
                                             <strong>Phone: </strong> +54 356 945234
                                         </p>
                                         <p>
-                                            <strong>Email: </strong> agents@example.com
+                                            <strong>Email: </strong> tirthpanchal165@gmail.com
                                         </p>
                                     </div>
                                 </div>

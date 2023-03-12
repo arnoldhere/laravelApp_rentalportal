@@ -16,13 +16,8 @@ class userController extends Controller
     {
         if (session()->get("user")) {
             $agents = agent::all();
-            $feedbacks = feedbackMSg::all();
-            $properties = propertyModel::all();
-            return view('user.index', compact('agents'), compact('feedbacks'), compact('properties'));
-        } else  if (session()->get('admin')) {
-            $agents = agent::all();
-            $feedbacks = feedbackMSg::all();
-            return view('admin.dashboard', compact('agents'), compact('feedbacks'));
+            $properti = propertyModel::all();
+            return view('user.index', compact('agents'), compact('properti'));
         } else {
             $agents = agent::all();
             $feedbacks = feedbackMSg::all();
@@ -31,24 +26,19 @@ class userController extends Controller
     }
     public function about()
     {
+
+        $feedbacks = feedbackMSg::all();
         if (session()->get('user')) {
-            return view('user.about');
-        } else {
-            return view('home.login');
-        }
-    }
-    public function agent_single()
-    {
-        if (session()->get('user')) {
-            return view('user.agent-single');
+            return view('user.about', compact('feedbacks'));
         } else {
             return view('home.login');
         }
     }
     public function agents_grid()
     {
+        $agents = agent::all();
         if (session()->get('user')) {
-            return view('user.agents-grid');
+            return view('user.agents-grid', compact('agents'));
         } else {
             return view('home.login');
         }
@@ -106,7 +96,8 @@ class userController extends Controller
     public function property_grid()
     {
         if (session()->get('user')) {
-            return view('user.property-grid');
+            $property = propertyModel::all();
+            return view('user.property-grid',compact('property'));
         } else {
             return view('home.login');
         }

@@ -32,7 +32,7 @@
                     <div class="col-md-12 col-lg-8">
                         <div class="title-single-box">
                             <h1 class="title-single">Our Amazing Agents</h1>
-                            <span class="color-text-a">Grid Properties</span>
+                            <span class="color-text-a"></span>
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-4">
@@ -47,6 +47,7 @@
                             </ol>
                         </nav>
                     </div>
+                    
                 </div>
             </div>
         </section><!-- End Intro Single-->
@@ -55,30 +56,40 @@
         <section class="agents-grid grid">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    
+                    @foreach ($agents as $agent )
+                        
+                     <div class="col-md-4">
                         <div class="card-box-d">
                             <div class="card-img-d">
-                                <img src="{{ asset('assets/img/agent-4.jpg') }}" alt="" class="img-d img-fluid">
+                                <img src="{{ asset('admin/agents/'.$agent->profilePhoto) }}" alt="" class="img-d img-fluid img-thubnail" style="
+                                    height:400px !important;
+                                    /* width: 250px !important; */
+                                    ">
                             </div>
                             <div class="card-overlay card-overlay-hover">
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="#" class="link-two">Margaret Sotillo
-                                                <br> Escala</a>
+                                            <a href="#" class="link-two"> {{ $agent->name }}
+                                                <br>  </a>
                                         </h3>
+                                            <hr>
+                                            <h6 class="text-dark">
+                                                {{ $agent->email }}
+                                            </h6>
                                     </div>
                                 </div>
                                 <div class="card-body-d">
                                     <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                                        {{ $agent->about }}
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
-                                            <strong>Phone: </strong> +54 356 945234
+                                            <strong>Phone: </strong> {{ $agent->phone }}
                                         </p>
                                         <p>
-                                            <strong>Email: </strong> agents@example.com
+                                            {{-- <strong>Email: </strong> agents@example.com --}}
                                         </p>
                                     </div>
                                 </div>
@@ -111,6 +122,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
 
             </div>

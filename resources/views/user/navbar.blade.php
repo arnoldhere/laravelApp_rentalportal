@@ -21,15 +21,15 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link " href="{{ route('user.blog_grid') }}">Blog</a>
+					<a class="nav-link " href="{{ route('user.property_grid') }}">Properties</a>
 				</li>
 
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item " href="{{ route('user.property_single') }}">Property
-							Single</a>
-						<a class="dropdown-item " href="{{ route('user.blog_single') }}">Blog Single</a>
+						{{-- <!-- <a class="dropdown-item " href="{{ route('user.property_single') }}">Property
+							Single</a> -->
+						<!-- <a class="dropdown-item " href="{{ route('user.blog_single') }}">Blog Single</a> --> --}}
 						<a class="dropdown-item " href="{{ route('user.agents_grid') }}">Agents Grid</a>
 					</div>
 				</li>
