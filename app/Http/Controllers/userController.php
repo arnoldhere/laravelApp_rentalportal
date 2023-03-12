@@ -27,22 +27,7 @@ class userController extends Controller
             return view("home.login", compact('agents'), compact('feedbacks'));
         }
     }
-    public function start(Request $request)
-    {
-        if (session()->get("user")) {
-            $agents = agent::all();
-            $feedbacks = feedbackMSg::all();
-            return view('user.index', compact('agents'), compact('feedbacks'));
-        } else  if (session()->get('admin')) {
-            $agents = agent::all();
-            $feedbacks = feedbackMSg::all();
-            return view('admin.dashboard', compact('agents'), compact('feedbacks'));
-        } else {
-            $agents = agent::all();
-            $feedbacks = feedbackMSg::all();
-            return view("home.login", compact('agents'), compact('feedbacks'));
-        }
-    }
+
     public function about()
     {
         if (session()->get('user')) {

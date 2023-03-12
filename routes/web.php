@@ -7,7 +7,9 @@ use App\Models\userModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [userController::class, 'start'])->name('start');
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 Route::get('/login', [homeController::class, 'login'])->name('login');
 Route::get('/signup', [homeController::class, 'signup'])->name('signup');
 Route::post('/signupUser', [homeController::class, 'signupUser'])->name('signupUser');
@@ -23,13 +25,16 @@ Route::get('/sendemail', [homeController::class, 'sendEmail']);
 // for admin
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/', [adminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/', function () {
+        return redirect()->route('admin.dashboard');
+    });
     Route::get('/dashboard', [adminController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/team', [adminController::class, 'team'])->name('team');
+    Route::get('/team', [adminController::class, 'agent'])->name('team');
     Route::post('/addAgent', [adminController::class, 'addAgent'])->name('addAgent');
     Route::get('/deleteagent/{id}', [adminController::class, 'deleteAgent'])->name('deleteagent');
-    Route::get('/deleteUser/{id}', [adminController::class, 'destroyUser'])->name('deleteUser');
+    Route::get('/deleteUser/{id}', [adminController::class, 'deleteUser'])->name('deleteUser');
+    Route::get('/editAgentPage/{id}', [adminController::class, 'editAgentPage'])->name('editAgentPage');
     Route::post('/editagent', [adminController::class, 'updateAgent'])->name('editagent');
 
     Route::get('/property', [adminController::class, 'properties'])->name('listproperty');

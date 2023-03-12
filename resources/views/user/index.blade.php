@@ -423,7 +423,7 @@
                     <div class="col-md-12">
                         <div class="title-wrap d-flex justify-content-between">
                             <div class="title-box">
-                                <h2 class="title-a">Best Agents</h2>
+                                <h2 class="title-a">Our Agents</h2>
                             </div>
                         </div>
                     </div>

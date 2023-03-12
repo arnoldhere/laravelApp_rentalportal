@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\DB;
 class adminController extends Controller
 {
 
-    public function destroyUser($id)
-    {
-        userModel::find($id)->delete();
-        Alert::success("Successfully Deleted");
-        return redirect()->route('admin.dashboard');
-    }
-
     public function dashboard()
     {
         if (session()->get('admin') == "admin@gmail.com") {
@@ -28,31 +21,21 @@ class adminController extends Controller
             $feedbacks = feedbackMSg::all();
             // $users = userModel::all();
             $users = DB::table('users')->paginate(5);
-            return view('admin.dashboard', compact('agents'), compact('users') , ['users'=>$users]);
+            return view('admin.dashboard', compact('agents'), compact('users'), ['users' => $users]);
         } else {
             return view('home.login');
         }
     }
-    public function dashboard1()
+
+    //==============================   User operations
+    public function deleteUser($id)
     {
-        if (session()->get('admin') == "admin@gmail.com") {
-            $agents = agent::all();
-            $feedbacks = feedbackMSg::all();
-            $users = userModel::all();
-            return view('admin.dashboard', compact('agents'), compact('users'));
-        } else {
-            return view('home.login');
-        }
+        userModel::find($id)->delete();
+        Alert::success("Successfully Deleted");
+        return redirect()->route('admin.dashboard');
     }
-    public function properties()
-    {
-        if (session()->get('admin') == "admin@gmail.com") {
-            return view('admin.properties');
-        } else {
-            return view('home.login');
-        }
-    }
-    public function team()
+    //==============================   Agent operations
+    public function agent()
     {
         if (session()->get('admin') == "admin@gmail.com") {
             $agents = agent::all();
@@ -60,6 +43,11 @@ class adminController extends Controller
         } else {
             return view('home.login');
         }
+    }
+    public function editAgentPage($id)
+    {
+        $agent = agent::find($id);
+        return view('admin.editAgent', compact('agent'));
     }
     public function addAgent(Request $request)
     {
@@ -103,7 +91,7 @@ class adminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:agents',
+            'email' => 'required',
             'phone' => 'required|digits:10',
             'about' => 'required',
             'profilePhoto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -129,6 +117,16 @@ class adminController extends Controller
         } else {
             Alert::warning('Failed', 'Failed to edit ...! Try again');
             return redirect()->route('admin.team');
+        }
+    }
+
+    //==============================   Properties operations
+    public function properties()
+    {
+        if (session()->get('admin') == "admin@gmail.com") {
+            return view('admin.properties');
+        } else {
+            return view('home.login');
         }
     }
 }
