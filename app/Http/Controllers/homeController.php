@@ -7,6 +7,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Models\userModel;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EmailDemo;
@@ -75,13 +76,13 @@ class homeController extends Controller
             'phone' => 'required|digits:10',
             'email' => "required|unique:users",
             'password' => 'required|min:4|confirmed',
-            'avatar'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         // avatar config
-        $avatar = str_replace(' ','_',$request->name).''.time().'.'.$request->avatar->extension(); 
-        $request->avatar->move(public_path('imgs/userAvatars'),$avatar);
-    
+        $avatar = str_replace(' ', '_', $request->name) . '' . time() . '.' . $request->avatar->extension();
+        $request->avatar->move(public_path('imgs/userAvatars'), $avatar);
+
         $user = new userModel();
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
@@ -117,39 +118,24 @@ class homeController extends Controller
     public function setPassword(Request $request)
     {
         $request->validate([
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'password' => 'required|min:5'
         ]);
-        $user = userModel::where('email', $request->email)->first();
-        if ($user) {
-            $otp = random_int(1000, 9999);
-            $fg = new forgetPassword();
-            $fg->userId = $user->id;
-            $fg->otp = $otp;
-            $fg->save();
-            return redirect()->route('askOtp')->with('id', $fg->id);
+        $chk = userModel::where('email', $request->email)->first();
+
+        if ($chk) {
+            $user =  userModel::find($request->email);
+            $user->password = $request->password;
+            $user->save();
+
+            Alert::success("Password changed");
+            return redirect()->route('login');
         } else {
             Alert::warning("Email not Found");
             return redirect()->back();
         }
     }
 
-
-    public function askOTP()
-    {
-        return view('home.askOtp');
-    }
-
-    public function matchOTP(Request $request)
-    {
-        $request->validate([
-            'id' => 'required|numeric',
-            'otp' => 'required|numeric|digits:4'
-        ]);
-        $fg = forgetPassword::find($request->id);
-        if ($fg->otp == $request->otp) {
-        }
-        return $request;
-    }
 
 
 

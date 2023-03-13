@@ -25,14 +25,14 @@
 
 <body>
 
-    @include('layout.err');
-    @include('sweetalert::alert');
+    @include('layout.err')
+    @include('sweetalert::alert')
     <main id="main">
         <div class="col-sm-12 section-t8 container">
         <div class="bg-info shadow-3 p-3 w-80 m-3 text-center ">
                 <h3 class="text-dark">Update Your Profile</h3>
             </div>
-                                <form action="{{ route('user.updateProfile') }}" method="post" role="form" class="php-email-form" name="contactform" enctype="multipart/form-data">
+                                <form action="{{ route('user.updateProfile') }}" method="post"  enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $user->id }}">
                                     <div class="row">
@@ -63,7 +63,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 text-center m-3">
-                                            <input type="submit" class="btn-lg btn btn-warning" value="Update">
+                                            <button class="btn-lg btn-warning btn" type="submit">Update</button>
                                         </div>
                                     </div>
                                 </form>
@@ -75,6 +75,7 @@
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    +
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 

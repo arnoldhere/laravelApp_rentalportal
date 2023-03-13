@@ -39,24 +39,13 @@
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
-
-                    <!-- <div class="wrap-input100 validate-input">
-                        <input class="input100" type="password" name="password" placeholder="New Password">
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" name="password" placeholder="Your password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
-
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="password" name="password_confirmation"
-                            placeholder="Re-enter New Password">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>
-                    </div> -->
-
                     <div class="container-login100-form-btn">
                         <button type="submit" class="login100-form-btn">
                             Next

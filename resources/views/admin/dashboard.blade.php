@@ -97,7 +97,7 @@
                     <td>
                         {{ $user->phone }}</td>
                     <td>
-                        <img src="{{ asset('/userAvatars/'.$user->avatar) }}" alt="" width="100px" height="80px">
+                        <img src="{{ asset('imgs//userAvatars/'.$user->avatar) }}" alt="" width="100px" height="80px">
                     </td>
                         <td>
                             <a href="{{ route('admin.deleteUser' , ['id'=>$user->id]) }}"

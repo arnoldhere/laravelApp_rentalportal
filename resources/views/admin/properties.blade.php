@@ -21,9 +21,9 @@ Properties
                                 <select name="type" class="form-control text-dark">
                                     <option value="" disabled selected>-- Your property category</option>
                                     <option value="pent house">pent house</option>
-                                    <option value="hotel">hotel</option>
+                                    <option value="Apartment">Apartment</option>
                                     <option value="bunglow">bunglow</option>
-                                    <option value="paying guest">Paying guest</option>
+                                    <option value="PG Room">PG Room</option>
                                 </select>
                         </div>
                         <div class="md-form mb-3">
@@ -37,7 +37,7 @@ Properties
                             <input type="number" class="text-dark form-control" name="area" placeholder="Area (ms)">
                         </div>
                         <div class="md-form mb-3">
-                            <input type="number" name="currentPrice" class="text-dark form-control" placeholder="Price ($)">
+                            <input type="number" name="currentPrice" class="text-dark form-control" placeholder="Price ">
                         </div>
                         <div class="md-form mb-3">
                             <select name="location" class="form-control text-dark">

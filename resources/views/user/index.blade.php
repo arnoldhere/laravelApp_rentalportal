@@ -26,42 +26,7 @@
 <body>
 
 
-    @include('user.navbar');
-    {{-- <!-- ======= Intro Section ======= -->
-    <div class="intro intro-carousel swiper position-relative">
-
-        <div class="swiper-wrapper">
-                <?php try {
-                    ?>
-            @foreach ($property as $item )
-            <div class="swiper-slide carousel-item-a intro-item bg-image"
-                style="background-image: url('{{ asset('imgs/propertyImgs/'.$item->image) }}. ')">
-                <div class="overlay overlay-a"></div>
-                <div class="intro-content display-table">
-                    <div class="table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="intro-body">
-                                        <p class="intro-title-top">{{ $item->location }}
-                                            <br> 302005
-                                        </p>
-                                        <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">{{ $item->status }} | &#x20B9; {{ $item->currentPrice }}</span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach<?php } catch (\Throwable $th) {
-                echo $th;
-            }?>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div><!-- End Intro Section --> --}}
+    @include('user.navbar')
 
     <main id="main">
 

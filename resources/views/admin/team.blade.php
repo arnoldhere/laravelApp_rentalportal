@@ -37,8 +37,8 @@
                             </div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-default mx-5" type="submit">Add</button>
-                            <button class="btn btn-default mx-5" type="reset">Reset</button>
+                            <button class="btn-md btn-default mx-5" type="submit">Add</button>
+                            <button class="btn-md btn-default mx-5" type="reset">Reset</button>
                         </div>
                     </div>
                 </form>
@@ -67,7 +67,7 @@
                 </tr>
             </thead>
             <tbody><?php $count = 1; ?>
-                @foreach ($agents as $agent)
+                @foreach ($pagAgents as $agent)
                     <tr>
                         <th> {{ $count++ }}</th>
                         <th>
@@ -84,7 +84,7 @@
                             </a>
                             <a href="{{ route('admin.deleteagent', ['id' => $agent->id]) }}"
                                 onclick="return confirm('Are you sure you want to remove?');"
-                                class=" btn-danger btn-sm m-2"><i class="fas fa-trash"></i>
+                                class="btn-md btn-danger btn-sm m-2"><i class="fas fa-trash"></i>
                             </a>
                         </th>
                     </tr>

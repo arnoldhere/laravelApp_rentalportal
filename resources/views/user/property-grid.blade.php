@@ -90,7 +90,7 @@
                   </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">{{ $item->status }} | $ {{ $item->currentPrice }}</span>
+                      <span class="price-a">{{ $item->status }} | &#x20B9; {{ $item->currentPrice }}</span>
                     </div>
                     </a>
                   </div>
@@ -98,21 +98,9 @@
                     <ul class="card-info d-flex justify-content-around">
                       <li>
                         <h4 class="card-info-title">Area</h4>
-                        <span>340m
+                        <span>{{ $item->area }} m
                           <sup>2</sup>
                         </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
                       </li>
                     </ul>
                   </div>
